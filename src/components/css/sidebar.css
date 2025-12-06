@@ -1,0 +1,86 @@
+.sidebar, .sidebar-projects, .project-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar {
+  height: 100vh;
+  max-width: 21rem;
+  
+  background-color: rgb(255, 255, 255);
+  box-shadow: 5px 0px 10px 0px rgba(0,0,0,0.1);
+}
+
+.sidebar-header {
+  flex: 0 1 9.6rem;
+  display: flex;
+  align-items: center;
+
+  border-bottom: 1px solid rgb(228, 228, 228);
+  padding-inline: 3rem;
+}
+
+.sidebar-header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  width: 100%;
+
+  h1 {
+    font-size: 1.9rem;
+    font-weight: 700;
+  }
+
+  svg {
+    width: 4rem;
+    fill: orange;
+  }
+}
+
+.sidebar-projects, .project-list {
+  gap: 1.4rem;
+}
+
+.sidebar-projects {
+  flex: 1 0 0;
+
+  padding: 3rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+
+  button {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+    position: relative;
+
+    border: none;
+    padding-block: 0.5rem;
+    width: 100%;
+    
+    background-color: transparent;
+    
+    /* &::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      height: 0.5rem;
+      width: 0.5rem;
+      border-radius: 100%;
+      background-color: red;
+    } */
+  }
+}
+
+.project-item {
+
+  
+}
+
+.sidebar-user {
+  flex: 0 1 9.6rem;
+
+  border-top: 1px solid rgb(228, 228, 228);
+}

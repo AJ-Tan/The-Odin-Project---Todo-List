@@ -1,0 +1,24 @@
+*,::before,::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+ul {
+  list-style-type: none;
+}
+
+body {
+  font-family: Roboto, Verdana, sans-serif;
+  background-color: rgb(243, 247, 252);
+}
