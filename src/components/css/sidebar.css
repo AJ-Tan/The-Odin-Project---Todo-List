@@ -4,6 +4,8 @@
 }
 
 .sidebar {
+  position: absolute;
+  left: 0;
   height: 100vh;
   max-width: 21rem;
   
@@ -12,7 +14,7 @@
 }
 
 .sidebar-header {
-  flex: 0 1 9.6rem;
+  flex: 0 0 15vh;
   display: flex;
   align-items: center;
 
@@ -30,24 +32,33 @@
   h1 {
     font-size: 1.9rem;
     font-weight: 700;
+    background: linear-gradient(90deg, var(--color-primary-1), var(--color-primary-2));
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
   svg {
     width: 4rem;
-    fill: orange;
+    fill: var(--color-primary-1);
   }
 }
 
 .sidebar-projects, .project-list {
-  gap: 1.4rem;
+  gap: 1rem;
+}
+
+.project-list {
+  overflow: auto;
 }
 
 .sidebar-projects {
-  flex: 1 0 0;
+  flex: 1 1;
 
-  padding: 3rem;
-  font-size: 1.3rem;
-  font-weight: 600;
+  max-height: 70vh;
+  padding: 3rem 2rem;
+  
+  font-size: 1.1rem;
+  font-weight: 300;
 
   button {
     display: flex;
@@ -55,32 +66,178 @@
     gap: 2rem;
 
     position: relative;
-
+    
     border: none;
+    border-radius: 99rem;
+    padding-inline: 1.5rem;
     padding-block: 0.5rem;
     width: 100%;
     
+    color: var(--color-text-main);
     background-color: transparent;
+    text-align: left;
+    opacity: 0.6;
+
+    &:is(:hover,.active) {
+      background-color: var(--btn-sub-hover-bg);
+      opacity: 1;
+    }
+
+    & > * {
+      flex-shrink: 0;
+    }
+  }
+
+  svg {
     
-    /* &::after {
-      content: "";
-      position: absolute;
-      right: 0;
-      height: 0.5rem;
-      width: 0.5rem;
-      border-radius: 100%;
-      background-color: red;
-    } */
+    width: 2rem;
+  }
+
+  button.high  {
+    color: var(--priority-high-text);
+
+    svg {
+      fill: var(--priority-high-icon);
+    }
+
+    &:is(:hover,.active) {
+      background-color: var(--priority-high-bg);
+    }
+  }
+
+  button.medium  {
+    color: var(--priority-medium-text);
+
+    svg {
+      fill: var(--priority-medium-icon);
+    }
+
+    &:is(:hover,.active) {
+      background-color: var(--priority-medium-bg);
+    }
+  }
+
+  button.low  {
+    color: var(--priority-low-text);
+
+    svg {
+      fill: var(--priority-low-icon);
+    }
+
+    &:is(:hover,.active) {
+      background-color: var(--priority-low-bg);
+    }
   }
 }
 
-.project-item {
-
+.sidebar-user {
+  flex: 0 0 15vh;
+  display: flex;
+  align-items: center;
   
+  border-top: 1px solid rgb(228, 228, 228);
+  padding-inline: 3rem;
 }
 
-.sidebar-user {
-  flex: 0 1 9.6rem;
+.user-container {
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+}
 
-  border-top: 1px solid rgb(228, 228, 228);
+.user-img-container {
+  border-radius: 100%;
+  max-width: 4rem;
+  overflow: hidden;
+}
+
+.user-name {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+@media screen and (max-width: 60em) {
+  .sidebar {
+    position: relative;
+    flex-direction: row;
+    justify-content: space-between;
+    height: unset;
+    max-width: unset;
+    padding-block: 1rem;
+    padding-inline: 1.5rem;
+  }
+
+  .sidebar-header {
+    flex: unset;
+    padding-inline: unset;
+    border-bottom: unset;
+  }
+
+  .sidebar-header-container {
+    gap: 0.5rem;
+    width: unset;
+
+    h1 {
+      font-size: 1.3rem;
+      font-weight: 700;
+    }
+
+    svg {
+      width: 2rem;
+    }
+  }
+
+  .sidebar-projects {
+    gap: 0.5rem;
+    max-height: 17vh;
+    max-width: 17rem;
+    padding: unset;
+    
+    font-size: 1.1rem;
+
+    button {
+      gap: 2rem;
+      width: max-content;
+      max-width: 17rem;
+      padding-inline-end: 3rem;
+    }
+
+    svg {
+      width: 2rem;
+    }
+  }
+
+  .project-list {
+    align-items: center;
+    gap: 0.5rem;
+    flex-direction: row;
+    overflow: auto;
+  }
+
+  .sidebar-user {
+    flex: unset;
+    justify-content: center;
+    border-top: unset;
+    padding-inline: 0rem;
+  }
+
+  .user-container {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .user-img-container {
+    max-width: 4rem;
+  }
+
+  .user-name {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+}
+
+@media screen and (max-width: 26.25em) {
+  .user-name {
+    display: none;
+  }
 }

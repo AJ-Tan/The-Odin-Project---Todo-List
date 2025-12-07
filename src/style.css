@@ -4,6 +4,40 @@
   padding: 0;
 }
 
+:root {
+  font-size: clamp(0.63rem, 2.4vw,1rem);
+  --color-primary-1: #3A7BD5;
+  --color-primary-2: #00D2FF;
+  --color-bg: #F5F9FC;   
+
+  --color-text-main: #1A1A1A;     /* main heading text */
+  --color-text-body: #3C3C3C;     /* paragraph / normal text */
+  --color-text-light: #6E6E6E;    /* labels, placeholders */
+  --color-text-on-primary: #FFFFFF; /* buttons on gradient */
+
+  --btn-sub-hover-bg: #ebebeb;
+
+  --btn-primary-bg: linear-gradient(90deg, #3A7BD5, #00D2FF);
+  --btn-primary-text: #FFFFFF;
+  --btn-primary-border: transparent;
+  --btn-primary-hover-bg: linear-gradient(90deg, #3490C9, #00C7F0);
+  --btn-primary-hover-shadow: 0 4px 10px rgba(0, 162, 255, 0.3);
+
+  --priority-high-icon: #FF3B30;     /* vivid red for attention */
+  --priority-high-text: #D92A2A;     /* darker red for readability */
+  --priority-high-bg: #FFE6E6;       /* soft red background */
+
+  --priority-medium-icon: #FFB020;   /* bright amber */
+  --priority-medium-text: #C77700;    /* darker orange for clarity */
+  --priority-medium-bg: #FFF4DF;      /* warm subtle background */
+
+  --priority-low-icon: #2ECC71;       /* fresh green */
+  --priority-low-text: #1F9D55;       /* darker green text */
+  --priority-low-bg: #E9FBF1;         /* gentle green background */
+
+  --display-switch: 42em;
+}
+
 img {
   display: block;
   width: 100%;
@@ -20,5 +54,14 @@ ul {
 
 body {
   font-family: Roboto, Verdana, sans-serif;
-  background-color: rgb(243, 247, 252);
+  background-color: var(--color-bg);
+  
+}
+
+#app {
+  padding-inline-start: 21rem;
+
+  @media screen and (max-width: 60em) {
+    padding-inline-start: unset;
+  }
 }

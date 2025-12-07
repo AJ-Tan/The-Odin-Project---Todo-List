@@ -32,6 +32,10 @@ module.exports = {
             presets: ["@babel/preset-env"]
           }
         }
+      },
+      {
+        test: /\.(jpe?g|png|apng|webp|mp4|avif)$/i,
+        type: "asset/resource"
       }
     ]
   }

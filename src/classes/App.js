@@ -4,7 +4,6 @@ class App {
   }
 
   appendContent(node) {
-    console.log(node);
     this.appNode.appendChild(node);
   }
 }
