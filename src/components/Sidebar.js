@@ -1,6 +1,9 @@
 import "./css/sidebar.css";
 import userImg from "../assets/sidebar/user-img.avif";
 import { app } from "../classes/App";
+import renderSidebarProjects from "./render/renderSidebar";
+import eventsSidebar from "./events/eventsSidebar";
+
 
 
 export const Sidebar = () => {
@@ -21,12 +24,11 @@ export const Sidebar = () => {
         <button class="high" type="button" type="button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>folder</title><path d="M10,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V8C22,6.89 21.1,6 20,6H12L10,4Z" /></svg> Project 1 Of the World that is in it and that is in that</button>
       </li>
       <li class="project-item">
-        <button class="active medium" type="button" type="button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>folder</title><path d="M10,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V8C22,6.89 21.1,6 20,6H12L10,4Z" /></svg> Project 2</button>
+        <button class="active medium" type="button" type="button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>folder</title><path d="M10,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V8C22,6.89 21.1,6 20,6H12L10,4Z" /></svg> <span>Project 2</span></button>
       </li>
       <li class="project-item">
         <button class="low" type="button" type="button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>folder</title><path d="M10,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V8C22,6.89 21.1,6 20,6H12L10,4Z" /></svg> Project 3</button>
       </li>
-      
     </ul>
   </section>
   <footer class="sidebar-user">
@@ -37,5 +39,6 @@ export const Sidebar = () => {
   </footer>`;
 
   app.appendContent(sidebarNode);
-  
+  renderSidebarProjects();
+  eventsSidebar();
 };

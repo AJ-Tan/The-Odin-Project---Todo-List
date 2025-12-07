@@ -11,3 +11,8 @@ pubsub.subscribe("changeHeaderDate", (date) => {
 
   dateDisplay.textContent = format(date, "MMM dd, yyyy");
 })
+
+pubsub.subscribe("activeProject", ({projectName}) => {
+  const headerTitleNode = document.querySelector(".header-title");
+  headerTitleNode.textContent = projectName;
+})

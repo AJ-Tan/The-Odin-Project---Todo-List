@@ -1,6 +1,6 @@
-export const data = [
+export const sampleData = [
   {
-    projID: "1p",
+    projectID: "1p",
     projectName: "Marketing Campaign",
     projectDescription: "Social media and email strategy for upcoming product launch",
     projectPriority: "high",
@@ -44,7 +44,7 @@ export const data = [
   },
 
   {
-    projID: "2p",
+    projectID: "2p",
     projectName: "Software Deployment",
     projectDescription: "Coordinate build rollout for production environment",
     projectPriority: "medium",
@@ -88,7 +88,7 @@ export const data = [
   },
 
   {
-    projID: "3p",
+    projectID: "3p",
     projectName: "Office Renovation",
     projectDescription: "Full redesign of workspace for new year expansion",
     projectPriority: "low",
