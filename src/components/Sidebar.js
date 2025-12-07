@@ -35,5 +35,7 @@ export const Sidebar = () => {
       <span class="user-name">AJ Tan</span>
     </div>
   </footer>`;
+
   app.appendContent(sidebarNode);
+  
 };

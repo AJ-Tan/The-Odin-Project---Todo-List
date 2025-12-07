@@ -5,6 +5,10 @@
   align-items: center;
   min-height: 100vh;
   padding-inline: 3rem;
+
+  & > *:nth-child(1) {
+    flex-basis: 9.55rem;
+  }
   
   & > *:nth-child(2) {
     flex:1;

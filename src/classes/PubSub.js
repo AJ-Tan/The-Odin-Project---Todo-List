@@ -14,7 +14,7 @@ class PubSub {
 
   publish(eventName, data) {
     if(!this.events[eventName]) {
-      ErrorLogger.throwError("Event name does not exist");
+      ErrorLogger.throwError(`Event ${eventName} does not exist`);
       return;
     }
     this.events[eventName].forEach(callback => callback(data));
