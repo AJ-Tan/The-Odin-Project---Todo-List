@@ -1,14 +1,13 @@
 import "./css/contentHeader.css";
 import { format } from "date-fns";
-import { pubsub } from "../classes/PubSub";
-import eventsContentHeader from "./events/eventsContentHeader";
+import eventsContentHeader from "./events/content-header/eventsContentHeader";
 
 export const _ContentHeader = (ContentNode) => {
   const contentHeaderNode = document.createElement("header");
   contentHeaderNode.classList.add("content-header");
   contentHeaderNode.innerHTML = `
   <div class="content-header-container">
-    <h2 class="header-title">Project 1 Of the World that is in it and that is in that</h2>
+    <h2 class="header-title">...</h2>
     <div class="input-container">
       <div class="header-date-container">
         <button type="button" id="date-decrease">&lt;</button>

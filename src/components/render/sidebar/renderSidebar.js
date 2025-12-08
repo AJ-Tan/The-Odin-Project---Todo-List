@@ -1,11 +1,10 @@
-import { todoData } from "../../Data/todoData";
+import { todoData } from "../../../classes/TodoData";
 import _sidebarProjectItem from "./_sidebarProjectItem";
 
 const renderSidebarProjects = () => {
   const projectListNode = document.querySelector(".project-list");
-
   const projectItems = document.createDocumentFragment();
-  todoData.forEach(data => {
+  todoData.getData.forEach(data => {
     projectItems.appendChild(_sidebarProjectItem(data));
   })
 

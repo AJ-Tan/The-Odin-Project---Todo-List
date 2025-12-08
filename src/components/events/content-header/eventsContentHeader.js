@@ -1,6 +1,7 @@
+import { todoData } from "../../../classes/TodoData";
 import { addDays, subDays, format } from "date-fns";
-import { pubsub } from "../../classes/PubSub";
-import "./sub/subContentHeader";
+import { pubsub } from "../../../classes/PubSub";
+import "./subContentHeader";
 
 const eventsContentHeader = () => {
   const dateSelect = document.getElementById("date-select");

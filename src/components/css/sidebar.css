@@ -60,15 +60,14 @@
   font-size: 1.1rem;
   font-weight: 300;
 
-  button {
+  .btn-project {
     display: flex;
     align-items: center;
-    gap: 2rem;
+    column-gap: 1rem;
 
     position: relative;
     
     border: none;
-    border-radius: 99rem;
     padding-inline: 1.5rem;
     padding-block: 0.5rem;
     width: 100%;
@@ -78,23 +77,29 @@
     text-align: left;
     opacity: 0.6;
 
-    &:is(:hover,.active) {
-      background-color: var(--btn-sub-hover-bg);
-      opacity: 1;
-    }
+    background-color: transparent;
 
     & > * {
       flex-shrink: 0;
     }
   }
 
+  #btn-add-project {
+    border-radius: 99rem;
+
+    &:hover {
+      background-color: var(--btn-sub-hover-bg);
+    }
+  }
+
   svg {
-    
     width: 2rem;
   }
 
-  button.high  {
-    color: var(--priority-high-text);
+  .high {
+    .project-item-button {
+      color: var(--priority-high-text);
+    }
 
     svg {
       fill: var(--priority-high-icon);
@@ -105,8 +110,10 @@
     }
   }
 
-  button.medium  {
-    color: var(--priority-medium-text);
+  .medium {
+    .project-item-button {
+      color: var(--priority-medium-text);
+    }
 
     svg {
       fill: var(--priority-medium-icon);
@@ -117,8 +124,10 @@
     }
   }
 
-  button.low  {
-    color: var(--priority-low-text);
+  .low {
+    .project-item-button {
+      color: var(--priority-low-text);
+    }
 
     svg {
       fill: var(--priority-low-icon);
@@ -128,6 +137,17 @@
       background-color: var(--priority-low-bg);
     }
   }
+}
+
+.project-item {
+  border-radius: 2rem;
+  min-width: 16rem;
+  overflow: hidden;
+}
+
+.options-overlay {
+  display: none;
+  flex-direction: column;
 }
 
 .sidebar-user {
@@ -197,9 +217,8 @@
     
     font-size: 1.1rem;
 
-    button {
-      gap: 1rem;
-      width: 16rem
+    .btn-project {
+      column-gap: 1rem;
     }
 
     svg {
