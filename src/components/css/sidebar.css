@@ -68,6 +68,7 @@
     position: relative;
     
     border: none;
+    border-radius: 99rem;
     padding-inline: 1.5rem;
     padding-block: 0.5rem;
     width: 100%;
@@ -97,7 +98,7 @@
   }
 
   .high {
-    .project-item-button {
+    .project-item-button, span {
       color: var(--priority-high-text);
     }
 
@@ -111,7 +112,7 @@
   }
 
   .medium {
-    .project-item-button {
+    .project-item-button, span {
       color: var(--priority-medium-text);
     }
 
@@ -125,7 +126,7 @@
   }
 
   .low {
-    .project-item-button {
+    .project-item-button, span {
       color: var(--priority-low-text);
     }
 
@@ -140,14 +141,59 @@
 }
 
 .project-item {
+  position: relative;
   border-radius: 2rem;
   min-width: 16rem;
   overflow: hidden;
 }
 
+.display-option {
+  background-color: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+}
+
 .options-overlay {
+  position: absolute;
+  inset: 0;
   display: none;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.4);
+
+  &.active {
+    display: flex;
+  }
+}
+
+.btn-project-option {
+  position: relative;
+  display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: none;
+
+  & > * {
+    transition: transform 0.2s ease-in-out;
+  }
+
+  & > *:nth-child(2) {
+    position: absolute;
+    display: none;
+  }
+
+  &:hover > *:nth-child(1) {
+    transform: translateY(-0.5rem);
+  }
+
+  &:hover > *:nth-child(2) {
+    display: block;
+    transform: translateY(0.95rem);
+  }
 }
 
 .sidebar-user {
