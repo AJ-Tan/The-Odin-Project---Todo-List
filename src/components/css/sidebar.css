@@ -4,7 +4,7 @@
 }
 
 .sidebar {
-  position: absolute;
+  position: fixed;
   left: 0;
   height: 100vh;
   max-width: 21rem;
@@ -14,7 +14,7 @@
 }
 
 .sidebar-header {
-  flex: 0 0 15vh;
+  flex: 0 0 9rem;
   display: flex;
   align-items: center;
 
@@ -197,7 +197,7 @@
 }
 
 .sidebar-user {
-  flex: 0 0 15vh;
+  flex: 0 0 9rem;
   display: flex;
   align-items: center;
   

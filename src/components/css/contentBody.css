@@ -1,3 +1,136 @@
 .content-body {
-  background-color: lch(32.3% 133.82 306.29 / 0.034);
+  padding-block: 2rem;
+}
+
+.content-project-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+  gap: 2rem;
+}
+
+.content-project-list__header {
+  display: flex;
+}
+
+.content-project-list-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  border-radius: 2rem;
+  padding: 1.5rem;
+}
+
+.content-project-list__header {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.title-container {
+  display: flex;
+  gap: 1rem;
+}
+
+.content-project-list-item__title {
+  display: inline-block;  /* shrink to fit content */
+}
+
+.btn-project-list-edit {
+  flex-shrink: 0;
+  width: 1.85rem;
+  height: 1.85rem;
+  background-color: transparent;
+  border: none;
+}
+
+.btn-delete-list {
+  border: none;
+  width: 1.85rem;
+  height: 1.85rem;
+  background-color: transparent;
+}
+
+/* Todo */
+
+.todo-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.btn-add-todo {
+  border-width: 3px;
+  border-style: dashed;
+  border-radius: 1rem;
+  height: 7rem;
+  background-color: transparent;
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.todo-item {
+  background-color: white;
+  border-radius: 1rem;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.todo-item__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding-block-end: 0.5rem;
+}
+
+.btn-todo-options {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  border: none;
+  height: 1.5rem;
+  width: 2rem;
+  background-color: transparent;
+  
+  svg {
+    fill: rgb(75, 75, 75);
+  }
+
+
+  &:hover svg{
+    fill: rgb(0, 0, 0);
+  }
+}
+
+.todo-item__priority {
+  border-radius: 0.3rem;
+  padding: 0.1rem 0.5rem;
+  text-transform: capitalize;
+
+  &[data-priority="high"] {
+    color: var(--priority-high-text);
+    background-color: var(--priority-high-bg);
+  }
+
+  &[data-priority="medium"] {
+    color: var(--priority-medium-text);
+    background-color: var(--priority-medium-bg);
+  }
+
+  &[data-priority="low"] {
+    color: var(--priority-low-text);
+    background-color: var(--priority-low-bg);
+  }
+}
+
+.todo-item__footer {
+  display: flex;
+  justify-content: space-between;
+  padding-block-start: 1.5rem;
+}
+
+.todo-item__deadline {
+  color: var(--color-text-light)
 }

@@ -1,4 +1,4 @@
-const _sidebarProjectItemOptions = () => {
+const _ProjectItemOptions = () => {
   const optionsOverlayNode = document.createElement("div");
   optionsOverlayNode.classList.add("options-overlay");
 
@@ -44,4 +44,4 @@ const _sidebarProjectItemOptions = () => {
   return optionsOverlayNode
 }
 
-export default _sidebarProjectItemOptions;
+export default _ProjectItemOptions;

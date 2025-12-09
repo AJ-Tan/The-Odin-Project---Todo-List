@@ -22,7 +22,6 @@ const eventsSidebar = () => {
   })
 
   const displayOptionNode = document.querySelectorAll(".display-option");
-  console.log(displayOptionNode);
   displayOptionNode.forEach(displayBtn => {
     displayBtn.addEventListener("click", (e) => {
       e.currentTarget.parentNode.nextElementSibling.classList.add("active");

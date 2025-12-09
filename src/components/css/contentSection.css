@@ -7,7 +7,7 @@
   padding-inline: 3rem;
 
   & > *:nth-child(1) {
-    flex-basis: 9.55rem;
+    flex-basis: 9rem;
   }
   
   & > *:nth-child(2) {

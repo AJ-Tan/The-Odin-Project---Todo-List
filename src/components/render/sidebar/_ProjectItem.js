@@ -1,6 +1,6 @@
-import _sidebarProjectItemOptions from "./_sidebarProjectItemOptions";
+import _ProjectItemOptions from "./_ProjectItemOptions";
 
-const _sidebarProjectItem = ({projectID, projectName, projectPriority}) => {
+const _ProjectItem = ({projectID, projectName, projectPriority}) => {
   const projectItemNode = document.createElement("li");
   projectItemNode.dataset["id"] = projectID;
   projectItemNode.classList.add("project-item", projectPriority);
@@ -26,9 +26,9 @@ const _sidebarProjectItem = ({projectID, projectName, projectPriority}) => {
     .documentElement;
   optionsButtonNode.appendChild(horizontalDotsSVG);
 
-  projectItemNode.appendChild(_sidebarProjectItemOptions());
+  projectItemNode.appendChild(_ProjectItemOptions());
 
   return projectItemNode;
 }
 
-export default _sidebarProjectItem;
+export default _ProjectItem;

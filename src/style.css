@@ -27,12 +27,12 @@
   --priority-high-text: #D92A2A;     /* darker red for readability */
   --priority-high-bg: #FFE6E6;       /* soft red background */
 
-  --priority-medium-icon: #FFB020;   /* bright amber */
-  --priority-medium-text: #C77700;    /* darker orange for clarity */
+  --priority-medium-icon: #f5aa1e;   /* bright amber */
+  --priority-medium-text: #bd7100;    /* darker orange for clarity */
   --priority-medium-bg: #FFF4DF;      /* warm subtle background */
 
-  --priority-low-icon: #2ECC71;       /* fresh green */
-  --priority-low-text: #1F9D55;       /* darker green text */
+  --priority-low-icon: #2dc26b;       /* fresh green */
+  --priority-low-text: #1b8d4c;       /* darker green text */
   --priority-low-bg: #E9FBF1;         /* gentle green background */
 
   --display-switch: 42em;

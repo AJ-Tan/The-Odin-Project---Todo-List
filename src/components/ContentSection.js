@@ -1,6 +1,7 @@
 import "./css/contentSection.css";
 import { _ContentHeader } from "./_ContentHeader";
 import { _ContentBody } from "./_ContentBody";
+import renderContentBody from "./render/content/renderContentBody";
 import { app } from "../classes/App";
 
 export const ContentSection = () => {
@@ -10,4 +11,5 @@ export const ContentSection = () => {
 
   _ContentHeader(contentNode);
   _ContentBody(contentNode);
+  renderContentBody();
 };
