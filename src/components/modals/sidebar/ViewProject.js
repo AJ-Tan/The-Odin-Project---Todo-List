@@ -1,0 +1,114 @@
+import { todoData } from "../../../classes/TodoData";
+
+const ViewProject = () => {
+  const modalNode = document.getElementById("modal");
+
+  const modalFormNode = document.createElement("form");
+  modalFormNode.classList.add("modal-form");
+  modalNode.appendChild(modalFormNode);
+
+  const modalHeaderContainerNode = document.createElement("header");
+  modalHeaderContainerNode.classList.add("modal-header__container");
+  modalFormNode.appendChild(modalHeaderContainerNode);
+
+  const modalTitleNode = document.createElement("h2");
+  modalTitleNode.id = "modal-header__title";
+  modalTitleNode.textContent = "View Project";
+  modalHeaderContainerNode.appendChild(modalTitleNode);
+
+  const modalCloseNode = document.createElement("button");
+  modalCloseNode.setAttribute("type", "button");
+  modalCloseNode.classList.add("modal-close");
+  modalCloseNode.addEventListener("click", () => {
+    modalNode.close();
+  })
+  modalHeaderContainerNode.appendChild(modalCloseNode);
+
+  const closeSVG = new DOMParser()
+    .parseFromString(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>close</title><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" /></svg>`,"image/svg+xml").documentElement;
+  modalCloseNode.appendChild(closeSVG);
+
+  const modalInputContainerNode = document.createElement("div");
+  modalInputContainerNode.classList.add("modal-input-container");
+  modalFormNode.appendChild(modalInputContainerNode);
+
+  // Project Name ========================================
+
+  const projectNameFormGroup = document.createElement("div");
+  projectNameFormGroup.classList.add("form-group");
+  modalInputContainerNode.appendChild(projectNameFormGroup);
+
+  const projectNameLabel = document.createElement("label");
+  projectNameLabel.setAttribute("for", "project-name");
+  projectNameLabel.textContent = "Project Name *";
+  projectNameFormGroup.appendChild(projectNameLabel);
+
+  const projectNameInput = document.createElement("input");
+  projectNameInput.id = "project-name";
+  projectNameInput.name = "projectName";
+  projectNameInput.classList.add("form-input", "text");
+  projectNameInput.value = todoData.currentProject.projectName;
+  projectNameInput.readOnly = true;
+  projectNameFormGroup.appendChild(projectNameInput);
+
+  const projectNameError = document.createElement("span");
+  projectNameError.classList.add("form-input__error");
+  projectNameFormGroup.appendChild(projectNameError);
+
+  // Project Priority ====================================
+  const projectPriorityFormGroup = document.createElement("div");
+  projectPriorityFormGroup.classList.add("form-group");
+  modalInputContainerNode.appendChild(projectPriorityFormGroup);
+
+  const projectPriorityLabel = document.createElement("label");
+  projectPriorityLabel.setAttribute("for", "project-priority");
+  projectPriorityLabel.textContent = "Project Priority *";
+  projectPriorityFormGroup.appendChild(projectPriorityLabel);
+
+  const projectPriorityInput = document.createElement("input");
+  projectPriorityInput.id = "project-priority";
+  projectPriorityInput.name = "projectPriority";
+  projectPriorityInput.classList.add("form-input", "select");
+  projectPriorityInput.value = todoData.currentProject.projectPriority;
+  projectPriorityInput.readOnly = true;
+  projectPriorityFormGroup.appendChild(projectPriorityInput);
+
+
+  // Project Description =====================================
+
+  const projectDescriptionFormGroup = document.createElement("div");
+  projectDescriptionFormGroup.classList.add("form-group");
+  modalInputContainerNode.appendChild(projectDescriptionFormGroup);
+
+  const projectDescriptionLabel = document.createElement("label");
+  projectDescriptionLabel.setAttribute("for", "project-name");
+  projectDescriptionLabel.textContent = "Project Description";
+  projectDescriptionFormGroup.appendChild(projectDescriptionLabel);
+
+  const projectDescriptionInput = document.createElement("textarea");
+  projectDescriptionInput.id = "project-description";
+  projectDescriptionInput.name = "projectDescription";
+  projectDescriptionInput.classList.add("form-input", "description");
+  projectDescriptionInput.setAttribute("rows", "4");
+  projectDescriptionInput.textContent = todoData.currentProject.projectDescription;
+  projectDescriptionInput.readOnly = true;
+  projectDescriptionFormGroup.appendChild(projectDescriptionInput);
+
+  // Project Submit ===========================================
+
+  const projectSubmit = document.createElement("button");
+  projectSubmit.classList.add("form-button", "submit");
+  projectSubmit.setAttribute("type", "submit");
+  projectSubmit.textContent = "Close";
+  projectSubmit.readOnly = true;
+  modalInputContainerNode.appendChild(projectSubmit);
+
+  modalFormNode.addEventListener("submit", e => {
+    e.preventDefault();
+    modalNode.close();
+  })
+
+  modalNode.showModal();
+}
+
+export default ViewProject;

@@ -1,3 +1,5 @@
+import { subDays, format } from "date-fns";
+
 export const sampleData = [
   {
     projectID: "1p",
@@ -10,10 +12,10 @@ export const sampleData = [
         projectListName: "Social Media",
         theme: { r: 231, g: 76, b: 60 }, // Red
         todoList: [
-          { todoID: "1td", todoTitle: "Create Ad Copy", todoDescription: "Draft Facebook and Instagram promotional captions", todoDeadline: "Dec 9, 2025", todoPriority: "medium", todoStatus: "ongoing" },
+          { todoID: "1td", todoTitle: "Create Ad Copy", todoDescription: "Draft Facebook and Instagram promotional captions", todoDeadline: format(subDays(new Date(), 1), "MMM dd, yyyy"), todoPriority: "medium", todoStatus: "ongoing" },
           { todoID: "2td", todoTitle: "Design Banner Assets", todoDescription: "Produce hero images and story templates", todoDeadline: "Jan 11, 2026", todoPriority: "high", todoStatus: "completed" },
           { todoID: "10td", todoTitle: "Schedule Posts", todoDescription: "Prepare posting calendar for all platforms", todoDeadline: "Jan 12, 2026", todoPriority: "low", todoStatus: "cancelled" },
-          { todoID: "11td", todoTitle: "Audience Research", todoDescription: "Identify target demographics and behaviors", todoDeadline: "Dec 10, 2025", todoPriority: "medium", todoStatus: "ongoing" }
+          { todoID: "11td", todoTitle: "Audience Research", todoDescription: "Identify target demographics and behaviors", todoDeadline: format(new Date(), "MMM dd, yyyy"), todoPriority: "medium", todoStatus: "ongoing" }
         ]
       },
       {
@@ -21,7 +23,7 @@ export const sampleData = [
         projectListName: "Email Advertising",
         theme: { r: 241, g: 196, b: 15 }, // Yellow
         todoList: [
-          { todoID: "3td", todoTitle: "Newsletter Layout", todoDescription: "Finalize CTA placement and branding", todoDeadline: "Jan 13, 2026", todoPriority: "low", todoStatus: "ongoing" },
+          { todoID: "3td", todoTitle: "Newsletter Layout", todoDescription: "Finalize CTA placement and branding", todoDeadline: "Jan 13, 2026", todoPriority: "low", todoStatus: "completed" },
           { todoID: "12td", todoTitle: "Audience Segmentation", todoDescription: "Group email recipients based on past activity", todoDeadline: "Jan 14, 2026", todoPriority: "medium", todoStatus: "ongoing" },
           { todoID: "13td", todoTitle: "A/B Testing Setup", todoDescription: "Prepare variants for subject lines and CTAs", todoDeadline: "Jan 15, 2026", todoPriority: "high", todoStatus: "ongoing" },
           { todoID: "14td", todoTitle: "Delivery Window Optimization", todoDescription: "Identify best send times per segment", todoDeadline: "Jan 16, 2026", todoPriority: "medium", todoStatus: "ongoing" },

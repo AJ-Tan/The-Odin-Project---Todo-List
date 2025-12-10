@@ -1,3 +1,6 @@
+import EditProject from "../../modals/sidebar/EditProject";
+import ViewProject from "../../modals/sidebar/ViewProject";
+
 const _ProjectItemOptions = () => {
   const optionsOverlayNode = document.createElement("div");
   optionsOverlayNode.classList.add("options-overlay");
@@ -5,6 +8,9 @@ const _ProjectItemOptions = () => {
   const viewButtonNode = document.createElement("button");
   viewButtonNode.setAttribute("type", "button");
   viewButtonNode.classList.add("btn-project-option", "btn-project-view");
+  viewButtonNode.addEventListener("click", () => {
+    ViewProject();
+  })
   optionsOverlayNode.appendChild(viewButtonNode);
 
   const viewTextNode = document.createElement("span");
@@ -18,6 +24,9 @@ const _ProjectItemOptions = () => {
   const editButtonNode = document.createElement("button");
   editButtonNode.setAttribute("type", "button");
   editButtonNode.classList.add("btn-project-option", "btn-project-edit");
+  editButtonNode.addEventListener("click", () => {
+    EditProject();
+  })
   optionsOverlayNode.appendChild(editButtonNode);
 
   const editTextNode = document.createElement("span");

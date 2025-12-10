@@ -7,6 +7,7 @@
 :root {
   font-size: clamp(0.63rem, 2.4vw,1rem);
   --color-primary-1: #3A7BD5;
+  --color-primary-1-hover: #2e60a7;
   --color-primary-2: #00D2FF;
   --color-bg: #f8fbfd;   
 
@@ -31,9 +32,9 @@
   --priority-medium-text: #bd7100;    /* darker orange for clarity */
   --priority-medium-bg: #FFF4DF;      /* warm subtle background */
 
-  --priority-low-icon: #2dc26b;       /* fresh green */
+  --priority-low-icon: #43eb89;       /* fresh green */
   --priority-low-text: #1b8d4c;       /* darker green text */
-  --priority-low-bg: #E9FBF1;         /* gentle green background */
+  --priority-low-bg: #ccf7df;         /* gentle green background */
 
   --display-switch: 42em;
 
@@ -70,7 +71,7 @@ img {
   width: 100%;
 }
 
-button {
+button, input, select, textarea  {
   font: inherit;
   cursor: pointer;
 }

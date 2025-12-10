@@ -1,6 +1,7 @@
 import { todoData } from "../../../classes/TodoData";
 import { pubsub } from "../../../classes/PubSub";
 import "./subSidebar";
+import AddProject from "../../modals/sidebar/AddProject";
 
 
 const eventsSidebar = () => {
@@ -26,6 +27,11 @@ const eventsSidebar = () => {
     displayBtn.addEventListener("click", (e) => {
       e.currentTarget.parentNode.nextElementSibling.classList.add("active");
     })
+  })
+
+  const btnAddProjectNode = document.getElementById("btn-add-project");
+  btnAddProjectNode.addEventListener("click", () => {
+    AddProject();
   })
 }
 

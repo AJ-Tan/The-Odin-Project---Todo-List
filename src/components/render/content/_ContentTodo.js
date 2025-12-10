@@ -1,8 +1,8 @@
-import { isAfter, isEqual } from "date-fns";
+import { isAfter, isEqual, addDays, differenceInDays } from "date-fns";
 import { pubsub } from "../../../classes/PubSub";
 
 const transformStatus = (todoStatus, todoDeadline) => {
-  if(todoStatus !== "ongoing") return todoStatus;
+  if(todoStatus !== "ongoing") return [todoStatus, todoStatus];
 
   const dateSelect = document.getElementById("date-select");
   let currentDate = new Date().setHours(0,0,0,0);
@@ -11,18 +11,23 @@ const transformStatus = (todoStatus, todoDeadline) => {
   }
   
   const todoDeadlineDate = new Date(todoDeadline);
-  if(isEqual(currentDate, todoDeadlineDate)) {
-    return "deadline";
-  } else if(isAfter(currentDate, todoDeadlineDate)) {
-    return "overdue";
+  if(isAfter(currentDate, todoDeadlineDate)) {
+    return ["overdue", "overdue"];
+  } else if(isAfter(addDays(currentDate, 8), todoDeadlineDate)) {
+    
+    if(isEqual(currentDate, todoDeadlineDate)) {
+      return ["deadline", "deadline today"];
+    } else {
+      return ["deadline", `deadline: ${differenceInDays(todoDeadlineDate,currentDate)} day's`];
+    }
   } else {
-    return "ongoing";
+    return ["ongoing", "ongoing"];
   }
 }
 
 const _ContentTodo = ({todoID, todoTitle, todoDeadline, todoPriority, todoStatus}) => {
   const todoItemNode = document.createElement("li");
-  const currentTodoStatus = transformStatus(todoStatus, todoDeadline);
+  const [currentTodoStatus, statusTextDisplay] = transformStatus(todoStatus, todoDeadline);
 
   todoItemNode.classList.add("todo-item");
   todoItemNode.dataset.id = todoID;
@@ -63,18 +68,22 @@ const _ContentTodo = ({todoID, todoTitle, todoDeadline, todoPriority, todoStatus
 
   const todoNotificationNode = document.createElement("span");
   todoNotificationNode.classList.add("todo-item__status");
-  todoNotificationNode.textContent = currentTodoStatus;
+  todoNotificationNode.textContent = statusTextDisplay;
   todoFooterNode.appendChild(todoNotificationNode);
 
   const renderTodoStatus = headerDateValue => {
     if(todoStatus !== "ongoing") return;
     const todoDeadlineDate = new Date(todoDeadline);
-    if(isEqual(headerDateValue, todoDeadlineDate)) {
-      todoItemNode.dataset.status = "deadline";
-      todoNotificationNode.textContent = "deadline";
-    } else if(isAfter(headerDateValue, todoDeadlineDate)) {
+    if(isAfter(headerDateValue, todoDeadlineDate)) {
       todoItemNode.dataset.status = "overdue";
       todoNotificationNode.textContent = "overdue";
+    } else if(isAfter(addDays(headerDateValue, 8), todoDeadlineDate)) {
+      todoItemNode.dataset.status = "deadline";
+      if(isEqual(headerDateValue, todoDeadlineDate)) {
+        todoNotificationNode.textContent = "deadline today";
+      } else {
+        todoNotificationNode.textContent = `deadline: ${differenceInDays(todoDeadlineDate,headerDateValue)} day's`;
+      }
     } else {
       todoItemNode.dataset.status = "ongoing";
       todoNotificationNode.textContent = "ongoing";
