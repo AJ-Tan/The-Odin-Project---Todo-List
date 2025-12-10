@@ -1,727 +1,178 @@
 export const sampleData = [
-  // ======================================================================
-  // PROJECT 1 — Marketing Campaign
-  // ======================================================================
   {
     projectID: "1p",
     projectName: "Marketing Campaign",
     projectDescription: "Social media and email strategy for upcoming product launch",
     projectPriority: "high",
     projectList: [
-      // ---------------------- LIST 1 (5 TODOS) ----------------------
       {
         projectListID: "1pl",
         projectListName: "Social Media",
-        theme: { r: "200", g: "30", b: "50" },
+        theme: { r: 231, g: 76, b: 60 }, // Red
         todoList: [
-          {
-            todoID: "1td",
-            todoTitle: "Create Ad Copy",
-            todoDescription: "Draft promotional captions for Facebook and Instagram",
-            todoDeadline: "Jan 9, 2026",
-            todoPriority: "medium"
-          },
-          {
-            todoID: "2td",
-            todoTitle: "Design Carousel Templates",
-            todoDescription: "Create templates for multi-image ads",
-            todoDeadline: "Jan 10, 2026",
-            todoPriority: "high"
-          },
-          {
-            todoID: "3td",
-            todoTitle: "Schedule Post Calendar",
-            todoDescription: "Prepare 10-day scheduling matrix",
-            todoDeadline: "Jan 11, 2026",
-            todoPriority: "low"
-          },
-          {
-            todoID: "4td",
-            todoTitle: "Engagement Strategy",
-            todoDescription: "Outline comment response and community engagement",
-            todoDeadline: "Jan 12, 2026",
-            todoPriority: "medium"
-          },
-          {
-            todoID: "5td",
-            todoTitle: "Influencer Outreach",
-            todoDescription: "Contact micro-influencers for collaboration",
-            todoDeadline: "Jan 13, 2026",
-            todoPriority: "medium"
-          }
+          { todoID: "1td", todoTitle: "Create Ad Copy", todoDescription: "Draft Facebook and Instagram promotional captions", todoDeadline: "Jan 9, 2026", todoPriority: "medium", todoStatus: "ongoing" },
+          { todoID: "2td", todoTitle: "Design Banner Assets", todoDescription: "Produce hero images and story templates", todoDeadline: "Jan 11, 2026", todoPriority: "high", todoStatus: "completed" },
+          { todoID: "10td", todoTitle: "Schedule Posts", todoDescription: "Prepare posting calendar for all platforms", todoDeadline: "Jan 12, 2026", todoPriority: "low", todoStatus: "cancelled" },
+          { todoID: "11td", todoTitle: "Audience Research", todoDescription: "Identify target demographics and behaviors", todoDeadline: "Jan 13, 2026", todoPriority: "medium", todoStatus: "ongoing" }
         ]
       },
-
-      // ---------------------- LIST 2 (7 TODOS) ----------------------
       {
         projectListID: "2pl",
         projectListName: "Email Advertising",
-        theme: { r: "255", g: "140", b: "0" },
+        theme: { r: 241, g: 196, b: 15 }, // Yellow
         todoList: [
-          {
-            todoID: "6td",
-            todoTitle: "Newsletter Layout",
-            todoDescription: "Finalize CTA placement and branding",
-            todoDeadline: "Jan 13, 2026",
-            todoPriority: "low"
-          },
-          {
-            todoID: "7td",
-            todoTitle: "Audience Segmentation",
-            todoDescription: "Group leads by engagement level",
-            todoDeadline: "Jan 14, 2026",
-            todoPriority: "high"
-          },
-          {
-            todoID: "8td",
-            todoTitle: "Automation Setup",
-            todoDescription: "Configure drip campaign",
-            todoDeadline: "Jan 15, 2026",
-            todoPriority: "medium"
-          },
-          {
-            todoID: "9td",
-            todoTitle: "Link Tracking",
-            todoDescription: "Add UTM parameters for analytics",
-            todoDeadline: "Jan 16, 2026",
-            todoPriority: "medium"
-          },
-          {
-            todoID: "10td",
-            todoTitle: "Mobile Optimization",
-            todoDescription: "Ensure email format is responsive",
-            todoDeadline: "Jan 17, 2026",
-            todoPriority: "high"
-          },
-          {
-            todoID: "11td",
-            todoTitle: "Spam Test",
-            todoDescription: "Check deliverability and spam score",
-            todoDeadline: "Jan 18, 2026",
-            todoPriority: "low"
-          },
-          {
-            todoID: "12td",
-            todoTitle: "Final QA Review",
-            todoDescription: "Verify links and formatting",
-            todoDeadline: "Jan 19, 2026",
-            todoPriority: "medium"
-          }
+          { todoID: "3td", todoTitle: "Newsletter Layout", todoDescription: "Finalize CTA placement and branding", todoDeadline: "Jan 13, 2026", todoPriority: "low", todoStatus: "ongoing" },
+          { todoID: "12td", todoTitle: "Audience Segmentation", todoDescription: "Group email recipients based on past activity", todoDeadline: "Jan 14, 2026", todoPriority: "medium", todoStatus: "ongoing" },
+          { todoID: "13td", todoTitle: "A/B Testing Setup", todoDescription: "Prepare variants for subject lines and CTAs", todoDeadline: "Jan 15, 2026", todoPriority: "high", todoStatus: "ongoing" },
+          { todoID: "14td", todoTitle: "Delivery Window Optimization", todoDescription: "Identify best send times per segment", todoDeadline: "Jan 16, 2026", todoPriority: "medium", todoStatus: "ongoing" },
+          { todoID: "15td", todoTitle: "Template Mobile Check", todoDescription: "Verify responsiveness for mobile devices", todoDeadline: "Jan 17, 2026", todoPriority: "low", todoStatus: "ongoing" }
         ]
       },
-
-      // ---------------------- LIST 3 (4 TODOS) ----------------------
       {
-        projectListID: "3pl",
-        projectListName: "Design & Branding",
-        theme: { r: "180", g: "70", b: "20" },
+        projectListID: "7pl",
+        projectListName: "Landing Page",
+        theme: { r: 46, g: 204, b: 113 }, // Green
         todoList: [
-          {
-            todoID: "13td",
-            todoTitle: "Logo Variants",
-            todoDescription: "Create monochrome and vertical logo versions",
-            todoDeadline: "Jan 11, 2026",
-            todoPriority: "low"
-          },
-          {
-            todoID: "14td",
-            todoTitle: "Brand Style Sheet",
-            todoDescription: "Update typography and spacing policies",
-            todoDeadline: "Jan 12, 2026",
-            todoPriority: "medium"
-          },
-          {
-            todoID: "15td",
-            todoTitle: "Campaign Graphics",
-            todoDescription: "Design 3 hero banners",
-            todoDeadline: "Jan 14, 2026",
-            todoPriority: "high"
-          },
-          {
-            todoID: "16td",
-            todoTitle: "Print Material Mockups",
-            todoDescription: "Create brochures and posters",
-            todoDeadline: "Jan 16, 2026",
-            todoPriority: "medium"
-          }
+          { todoID: "16td", todoTitle: "Wireframe Draft", todoDescription: "Prepare wireframe for final review", todoDeadline: "Jan 18, 2026", todoPriority: "medium", todoStatus: "ongoing" },
+          { todoID: "17td", todoTitle: "Hero Section Copy", todoDescription: "Write compelling headline and subtext", todoDeadline: "Jan 19, 2026", todoPriority: "high", todoStatus: "ongoing" },
+          { todoID: "18td", todoTitle: "CTA Button Styles", todoDescription: "Define shapes, colors, shadows", todoDeadline: "Jan 20, 2026", todoPriority: "low", todoStatus: "ongoing" },
+          { todoID: "19td", todoTitle: "Finalize Graphics", todoDescription: "Prepare vector illustrations", todoDeadline: "Jan 21, 2026", todoPriority: "medium", todoStatus: "ongoing" }
         ]
       },
-
-      // ---------------------- LIST 4 (6 TODOS) ----------------------
       {
-        projectListID: "4pl",
-        projectListName: "Analytics Setup",
-        theme: { r: "50", g: "50", b: "50" },
+        projectListID: "8pl",
+        projectListName: "Analytics",
+        theme: { r: 52, g: 152, b: 219 }, // Blue
         todoList: [
-          {
-            todoID: "17td",
-            todoTitle: "Install Tracking Pixel",
-            todoDescription: "Verify Facebook Pixel event triggers",
-            todoDeadline: "Jan 14, 2026",
-            todoPriority: "high"
-          },
-          {
-            todoID: "18td",
-            todoTitle: "Google Analytics Setup",
-            todoDescription: "Create filters and reports",
-            todoDeadline: "Jan 15, 2026",
-            todoPriority: "medium"
-          },
-          {
-            todoID: "19td",
-            todoTitle: "Traffic Dashboard",
-            todoDescription: "Add custom KPIs to dashboard",
-            todoDeadline: "Jan 16, 2026",
-            todoPriority: "low"
-          },
-          {
-            todoID: "20td",
-            todoTitle: "Email Metrics Integration",
-            todoDescription: "Sync with email automation platform",
-            todoDeadline: "Jan 17, 2026",
-            todoPriority: "medium"
-          },
-          {
-            todoID: "21td",
-            todoTitle: "Audience Report",
-            todoDescription: "Summarize demographics and behaviors",
-            todoDeadline: "Jan 18, 2026",
-            todoPriority: "low"
-          },
-          {
-            todoID: "22td",
-            todoTitle: "Bug Fixes",
-            todoDescription: "Resolve missing UTM tags",
-            todoDeadline: "Jan 19, 2026",
-            todoPriority: "medium"
-          }
+          { todoID: "20td", todoTitle: "Setup Tracking Events", todoDescription: "Add click and conversion events", todoDeadline: "Jan 22, 2026", todoPriority: "high", todoStatus: "ongoing" },
+          { todoID: "21td", todoTitle: "Dashboard Layout", todoDescription: "Create realtime monitoring dashboard", todoDeadline: "Jan 23, 2026", todoPriority: "medium", todoStatus: "ongoing" },
+          { todoID: "22td", todoTitle: "Traffic Baseline Study", todoDescription: "Analyze current traffic patterns", todoDeadline: "Jan 24, 2026", todoPriority: "low", todoStatus: "ongoing" },
+          { todoID: "23td", todoTitle: "UTM Setup", todoDescription: "Add UTMs to all campaign links", todoDeadline: "Jan 25, 2026", todoPriority: "medium", todoStatus: "ongoing" }
         ]
       },
-
-      // ---------------------- LIST 5 (5 TODOS) ----------------------
       {
-        projectListID: "5pl",
-        projectListName: "Market Research",
-        theme: { r: "90", g: "50", b: "150" },
+        projectListID: "9pl",
+        projectListName: "Content Production",
+        theme: { r: 155, g: 89, b: 182 }, // Purple
         todoList: [
-          {
-            todoID: "23td",
-            todoTitle: "Competitor Scan",
-            todoDescription: "Review competing ad creatives",
-            todoDeadline: "Jan 9, 2026",
-            todoPriority: "medium"
-          },
-          {
-            todoID: "24td",
-            todoTitle: "Audience Survey",
-            todoDescription: "Distribute questionnaires to sample group",
-            todoDeadline: "Jan 10, 2026",
-            todoPriority: "high"
-          },
-          {
-            todoID: "25td",
-            todoTitle: "Trend Analysis",
-            todoDescription: "Identify emerging industry trends",
-            todoDeadline: "Jan 11, 2026",
-            todoPriority: "low"
-          },
-          {
-            todoID: "26td",
-            todoTitle: "Insights Presentation",
-            todoDescription: "Share findings with team",
-            todoDeadline: "Jan 13, 2026",
-            todoPriority: "medium"
-          },
-          {
-            todoID: "27td",
-            todoTitle: "Persona Updates",
-            todoDescription: "Revise audience profiles",
-            todoDeadline: "Jan 14, 2026",
-            todoPriority: "medium"
-          }
+          { todoID: "24td", todoTitle: "Storyboard Creation", todoDescription: "Plan short-form video structure", todoDeadline: "Jan 26, 2026", todoPriority: "medium", todoStatus: "ongoing" },
+          { todoID: "25td", todoTitle: "Voiceover Recording", todoDescription: "Record narration for campaign ads", todoDeadline: "Jan 27, 2026", todoPriority: "high", todoStatus: "ongoing" },
+          { todoID: "26td", todoTitle: "Script Editing", todoDescription: "Refine lines for clarity and impact", todoDeadline: "Jan 28, 2026", todoPriority: "low", todoStatus: "ongoing" },
+          { todoID: "27td", todoTitle: "Thumbnail Drafts", todoDescription: "Produce 3-5 thumbnail variations", todoDeadline: "Jan 29, 2026", todoPriority: "medium", todoStatus: "ongoing" }
         ]
       }
     ]
   },
 
-  // ======================================================================
-  // PROJECT 2 — Software Deployment
-  // ======================================================================
+  // ---------------- SECOND PROJECT ----------------
+
   {
     projectID: "2p",
     projectName: "Software Deployment",
     projectDescription: "Coordinate build rollout for production environment",
     projectPriority: "medium",
     projectList: [
-      // ---------------------- LIST 1 (4 TODOS) ----------------------
       {
-        projectListID: "6pl",
+        projectListID: "3pl",
         projectListName: "Testing",
-        theme: { r: "0", g: "150", b: "180" },
+        theme: { r: 41, g: 128, b: 185 }, // Deep blue
         todoList: [
-          {
-            todoID: "28td",
-            todoTitle: "Regression Test",
-            todoDescription: "Run regression suite on latest build",
-            todoDeadline: "Feb 2, 2026",
-            todoPriority: "high"
-          },
-          {
-            todoID: "29td",
-            todoTitle: "Coverage Review",
-            todoDescription: "Increase unit test coverage to 85%",
-            todoDeadline: "Feb 4, 2026",
-            todoPriority: "medium"
-          },
-          {
-            todoID: "30td",
-            todoTitle: "Performance Test",
-            todoDescription: "Load test critical endpoints",
-            todoDeadline: "Feb 5, 2026",
-            todoPriority: "high"
-          },
-          {
-            todoID: "31td",
-            todoTitle: "Bug Classification",
-            todoDescription: "Tag issues by severity",
-            todoDeadline: "Feb 6, 2026",
-            todoPriority: "medium"
-          }
+          { todoID: "4td", todoTitle: "Regression Test", todoDescription: "Run automated regression suite on new build", todoDeadline: "Feb 2, 2026", todoPriority: "high", todoStatus: "ongoing" },
+          { todoID: "5td", todoTitle: "Unit Test Coverage", todoDescription: "Increase coverage to 85%", todoDeadline: "Feb 4, 2026", todoPriority: "medium", todoStatus: "ongoing" },
+          { todoID: "28td", todoTitle: "API Load Test", todoDescription: "Simulate heavy traffic on endpoints", todoDeadline: "Feb 5, 2026", todoPriority: "high", todoStatus: "ongoing" },
+          { todoID: "29td", todoTitle: "Integration QA", todoDescription: "Check module compatibility", todoDeadline: "Feb 6, 2026", todoPriority: "medium", todoStatus: "ongoing" }
         ]
       },
 
-      // ---------------------- LIST 2 (6 TODOS) ----------------------
       {
-        projectListID: "7pl",
+        projectListID: "4pl",
         projectListName: "Release Coordination",
-        theme: { r: "50", g: "50", b: "200" },
+        theme: { r: 142, g: 68, b: 173 }, // Purple
         todoList: [
-          {
-            todoID: "32td",
-            todoTitle: "Finalize Checklist",
-            todoDescription: "Verify scripts and rollbacks",
-            todoDeadline: "Feb 6, 2026",
-            todoPriority: "low"
-          },
-          {
-            todoID: "33td",
-            todoTitle: "Release Notes",
-            todoDescription: "Compile changes for the update",
-            todoDeadline: "Feb 7, 2026",
-            todoPriority: "medium"
-          },
-          {
-            todoID: "34td",
-            todoTitle: "Ops Sync Call",
-            todoDescription: "Brief operations team before release",
-            todoDeadline: "Feb 8, 2026",
-            todoPriority: "medium"
-          },
-          {
-            todoID: "35td",
-            todoTitle: "Version Tagging",
-            todoDescription: "Tag stable build versions",
-            todoDeadline: "Feb 9, 2026",
-            todoPriority: "high"
-          },
-          {
-            todoID: "36td",
-            todoTitle: "Rollback Verification",
-            todoDescription: "Test rollback flow",
-            todoDeadline: "Feb 10, 2026",
-            todoPriority: "high"
-          },
-          {
-            todoID: "37td",
-            todoTitle: "Green-Light Approval",
-            todoDescription: "Secure PM approval for production release",
-            todoDeadline: "Feb 11, 2026",
-            todoPriority: "medium"
-          }
+          { todoID: "6td", todoTitle: "Deployment Checklist", todoDescription: "Verify scripts, docker images, fallback plan", todoDeadline: "Feb 6, 2026", todoPriority: "low", todoStatus: "ongoing" },
+          { todoID: "30td", todoTitle: "Cloud Resource Prep", todoDescription: "Confirm VM availability and scaling rules", todoDeadline: "Feb 7, 2026", todoPriority: "high", todoStatus: "ongoing" },
+          { todoID: "31td", todoTitle: "Rollback Plan", todoDescription: "Document procedures for reverting build", todoDeadline: "Feb 8, 2026", todoPriority: "medium", todoStatus: "ongoing" },
+          { todoID: "32td", todoTitle: "Stakeholder Scheduling", todoDescription: "Notify cross-teams about deployment window", todoDeadline: "Feb 9, 2026", todoPriority: "low", todoStatus: "ongoing" }
         ]
       },
 
-      // ---------------------- LIST 3 (7 TODOS) ----------------------
-      {
-        projectListID: "8pl",
-        projectListName: "Infrastructure",
-        theme: { r: "100", g: "50", b: "0" },
-        todoList: [
-          {
-            todoID: "38td",
-            todoTitle: "Server Deployment",
-            todoDescription: "Provision new VM instances",
-            todoDeadline: "Feb 10, 2026",
-            todoPriority: "medium"
-          },
-          {
-            todoID: "39td",
-            todoTitle: "Load Balancer Rules",
-            todoDescription: "Configure blue-green deployment rules",
-            todoDeadline: "Feb 11, 2026",
-            todoPriority: "high"
-          },
-          {
-            todoID: "40td",
-            todoTitle: "Firewall Review",
-            todoDescription: "Update inbound/outbound policies",
-            todoDeadline: "Feb 12, 2026",
-            todoPriority: "high"
-          },
-          {
-            todoID: "41td",
-            todoTitle: "CDN Cache Setup",
-            todoDescription: "Enable caching rules for static assets",
-            todoDeadline: "Feb 13, 2026",
-            todoPriority: "medium"
-          },
-          {
-            todoID: "42td",
-            todoTitle: "SSL Certificate Update",
-            todoDescription: "Renew and apply SSL certs",
-            todoDeadline: "Feb 14, 2026",
-            todoPriority: "high"
-          },
-          {
-            todoID: "43td",
-            todoTitle: "DNS Propagation Test",
-            todoDescription: "Verify new DNS configurations",
-            todoDeadline: "Feb 15, 2026",
-            todoPriority: "medium"
-          },
-          {
-            todoID: "44td",
-            todoTitle: "System Hardening",
-            todoDescription: "Run security hardening script",
-            todoDeadline: "Feb 16, 2026",
-            todoPriority: "low"
-          }
-        ]
-      },
-
-      // ---------------------- LIST 4 (4 TODOS) ----------------------
-      {
-        projectListID: "9pl",
-        projectListName: "Monitoring & Alerts",
-        theme: { r: "150", g: "80", b: "80" },
-        todoList: [
-          {
-            todoID: "45td",
-            todoTitle: "Update Dashboards",
-            todoDescription: "Add error rate and latency charts",
-            todoDeadline: "Feb 18, 2026",
-            todoPriority: "medium"
-          },
-          {
-            todoID: "46td",
-            todoTitle: "Set Alert Policies",
-            todoDescription: "Configure CPU and memory alerts",
-            todoDeadline: "Feb 19, 2026",
-            todoPriority: "high"
-          },
-          {
-            todoID: "47td",
-            todoTitle: "Incident Simulation",
-            todoDescription: "Run mock outage scenario",
-            todoDeadline: "Feb 20, 2026",
-            todoPriority: "high"
-          },
-          {
-            todoID: "48td",
-            todoTitle: "Log Rotation Check",
-            todoDescription: "Verify log retention policies",
-            todoDeadline: "Feb 21, 2026",
-            todoPriority: "low"
-          }
-        ]
-      },
-
-      // ---------------------- LIST 5 (6 TODOS) ----------------------
       {
         projectListID: "10pl",
-        projectListName: "DevOps Automation",
-        theme: { r: "40", g: "160", b: "60" },
+        projectListName: "Monitoring",
+        theme: { r: 39, g: 174, b: 96 }, // Green
         todoList: [
-          {
-            todoID: "49td",
-            todoTitle: "Pipeline Cleanup",
-            todoDescription: "Remove deprecated stages",
-            todoDeadline: "Feb 22, 2026",
-            todoPriority: "low"
-          },
-          {
-            todoID: "50td",
-            todoTitle: "Auto Deployment",
-            todoDescription: "Enable automated prod build trigger",
-            todoDeadline: "Feb 23, 2026",
-            todoPriority: "medium"
-          },
-          {
-            todoID: "51td",
-            todoTitle: "Secret Manager Config",
-            todoDescription: "Rotate API credentials",
-            todoDeadline: "Feb 24, 2026",
-            todoPriority: "high"
-          },
-          {
-            todoID: "52td",
-            todoTitle: "Container Security",
-            todoDescription: "Scan Docker images for vulnerabilities",
-            todoDeadline: "Feb 25, 2026",
-            todoPriority: "high"
-          },
-          {
-            todoID: "53td",
-            todoTitle: "Artifact Cleanup",
-            todoDescription: "Remove old registry images",
-            todoDeadline: "Feb 26, 2026",
-            todoPriority: "low"
-          },
-          {
-            todoID: "54td",
-            todoTitle: "Build Speed Optimization",
-            todoDescription: "Cache dependencies for faster CI",
-            todoDeadline: "Feb 27, 2026",
-            todoPriority: "medium"
-          }
+          { todoID: "33td", todoTitle: "Setup Alerts", todoDescription: "Configure error rate threshold alerts", todoDeadline: "Feb 10, 2026", todoPriority: "high", todoStatus: "ongoing" },
+          { todoID: "34td", todoTitle: "Expand Log Retention", todoDescription: "Increase retention policy from 7 to 30 days", todoDeadline: "Feb 11, 2026", todoPriority: "medium", todoStatus: "ongoing" },
+          { todoID: "35td", todoTitle: "Service Map Update", todoDescription: "Refresh inter-service dependencies map", todoDeadline: "Feb 12, 2026", todoPriority: "low", todoStatus: "ongoing" }
+        ]
+      },
+
+      {
+        projectListID: "11pl",
+        projectListName: "Security",
+        theme: { r: 192, g: 57, b: 43 }, // Red
+        todoList: [
+          { todoID: "36td", todoTitle: "Vulnerability Scan", todoDescription: "Run full system scan", todoDeadline: "Feb 13, 2026", todoPriority: "high", todoStatus: "ongoing" },
+          { todoID: "37td", todoTitle: "Key Rotation", todoDescription: "Rotate all secrets and tokens", todoDeadline: "Feb 14, 2026", todoPriority: "medium", todoStatus: "ongoing" },
+          { todoID: "38td", todoTitle: "Audit Review", todoDescription: "Review last month's access logs", todoDeadline: "Feb 15, 2026", todoPriority: "low", todoStatus: "ongoing" },
+          { todoID: "39td", todoTitle: "API Rate Limits", todoDescription: "Update per-endpoint throttling", todoDeadline: "Feb 16, 2026", todoPriority: "medium", todoStatus: "ongoing" }
         ]
       }
     ]
   },
 
-  // ======================================================================
-  // PROJECT 3 — Office Renovation
-  // ======================================================================
+  // ---------------- THIRD PROJECT ----------------
+
   {
     projectID: "3p",
     projectName: "Office Renovation",
     projectDescription: "Full redesign of workspace for new year expansion",
     projectPriority: "low",
     projectList: [
-      // ---------------------- LIST 1 (7 TODOS) ----------------------
       {
-        projectListID: "11pl",
+        projectListID: "5pl",
         projectListName: "Interior Design",
-        theme: { r: "120", g: "200", b: "50" },
+        theme: { r: 241, g: 90, b: 34 }, // Orange
         todoList: [
-          {
-            todoID: "55td",
-            todoTitle: "Furniture Layout Plan",
-            todoDescription: "Optimize seating and spacing",
-            todoDeadline: "Mar 5, 2026",
-            todoPriority: "medium"
-          },
-          {
-            todoID: "56td",
-            todoTitle: "Color Scheme Draft",
-            todoDescription: "Propose a palette for wall and accents",
-            todoDeadline: "Mar 6, 2026",
-            todoPriority: "low"
-          },
-          {
-            todoID: "57td",
-            todoTitle: "Lighting Placement",
-            todoDescription: "Determine LED and ambient lighting areas",
-            todoDeadline: "Mar 7, 2026",
-            todoPriority: "medium"
-          },
-          {
-            todoID: "58td",
-            todoTitle: "Material Samples",
-            todoDescription: "Gather wood, tile, and paint samples",
-            todoDeadline: "Mar 8, 2026",
-            todoPriority: "low"
-          },
-          {
-            todoID: "59td",
-            todoTitle: "3D Render Draft",
-            todoDescription: "Produce initial design renders",
-            todoDeadline: "Mar 10, 2026",
-            todoPriority: "medium"
-          },
-          {
-            todoID: "60td",
-            todoTitle: "Design Revisions",
-            todoDescription: "Apply feedback to render updates",
-            todoDeadline: "Mar 11, 2026",
-            todoPriority: "low"
-          },
-          {
-            todoID: "61td",
-            todoTitle: "Final Proposal",
-            todoDescription: "Deliver final interior design package",
-            todoDeadline: "Mar 12, 2026",
-            todoPriority: "high"
-          }
+          { todoID: "7td", todoTitle: "Furniture Layout", todoDescription: "Optimize seating capacity and team grouping", todoDeadline: "Mar 5, 2026", todoPriority: "medium", todoStatus: "ongoing" },
+          { todoID: "8td", todoTitle: "Color Palette Proposal", todoDescription: "Select and finalize color theme", todoDeadline: "Mar 8, 2026", todoPriority: "low", todoStatus: "ongoing" },
+          { todoID: "40td", todoTitle: "Lighting Study", todoDescription: "Determine optimal brightness levels", todoDeadline: "Mar 9, 2026", todoPriority: "medium", todoStatus: "ongoing" },
+          { todoID: "41td", todoTitle: "Wall Material Options", todoDescription: "Compare drywall, panels, and acoustic boards", todoDeadline: "Mar 10, 2026", todoPriority: "low", todoStatus: "ongoing" }
         ]
       },
 
-      // ---------------------- LIST 2 (4 TODOS) ----------------------
+      {
+        projectListID: "6pl",
+        projectListName: "Contractor Coordination",
+        theme: { r: 52, g: 73, b: 94 }, // Gray/Blue steel
+        todoList: [
+          { todoID: "9td", todoTitle: "Finalize Contracts", todoDescription: "Negotiate cost and finalize agreement", todoDeadline: "Mar 10, 2026", todoPriority: "high", todoStatus: "ongoing" },
+          { todoID: "42td", todoTitle: "Material Procurement", todoDescription: "Confirm supplier orders", todoDeadline: "Mar 11, 2026", todoPriority: "medium", todoStatus: "ongoing" },
+          { todoID: "43td", todoTitle: "Schedule Work Hours", todoDescription: "Align with company operations", todoDeadline: "Mar 12, 2026", todoPriority: "low", todoStatus: "ongoing" },
+          { todoID: "44td", todoTitle: "Safety Procedure Review", todoDescription: "Ensure OSHA compliance", todoDeadline: "Mar 13, 2026", todoPriority: "medium", todoStatus: "ongoing" }
+        ]
+      },
+
       {
         projectListID: "12pl",
-        projectListName: "Contractor Coordination",
-        theme: { r: "255", g: "255", b: "0" },
+        projectListName: "Furniture",
+        theme: { r: 26, g: 188, b: 156 }, // Teal
         todoList: [
-          {
-            todoID: "62td",
-            todoTitle: "Contract Finalization",
-            todoDescription: "Review and sign contractor agreements",
-            todoDeadline: "Mar 10, 2026",
-            todoPriority: "high"
-          },
-          {
-            todoID: "63td",
-            todoTitle: "Site Visit Scheduling",
-            todoDescription: "Arrange weekly contractor check-ins",
-            todoDeadline: "Mar 11, 2026",
-            todoPriority: "medium"
-          },
-          {
-            todoID: "64td",
-            todoTitle: "Permit Application",
-            todoDescription: "Submit renovation paperwork",
-            todoDeadline: "Mar 12, 2026",
-            todoPriority: "high"
-          },
-          {
-            todoID: "65td",
-            todoTitle: "Compliance Check",
-            todoDescription: "Ensure all guidelines are met",
-            todoDeadline: "Mar 13, 2026",
-            todoPriority: "medium"
-          }
+          { todoID: "45td", todoTitle: "Chair Selection", todoDescription: "Choose ergonomic models", todoDeadline: "Mar 14, 2026", todoPriority: "medium", todoStatus: "ongoing" },
+          { todoID: "46td", todoTitle: "Desk Models", todoDescription: "Decide between fixed and adjustable desks", todoDeadline: "Mar 15, 2026", todoPriority: "low", todoStatus: "ongoing" },
+          { todoID: "47td", todoTitle: "Delivery Coordination", todoDescription: "Schedule bulk delivery", todoDeadline: "Mar 16, 2026", todoPriority: "medium", todoStatus: "ongoing" }
         ]
       },
 
-      // ---------------------- LIST 3 (5 TODOS) ----------------------
       {
         projectListID: "13pl",
-        projectListName: "Purchasing & Procurement",
-        theme: { r: "0", g: "130", b: "70" },
-        todoList: [
-          {
-            todoID: "66td",
-            todoTitle: "Quotation Gathering",
-            todoDescription: "Request quotes from 5 suppliers",
-            todoDeadline: "Mar 11, 2026",
-            todoPriority: "medium"
-          },
-          {
-            todoID: "67td",
-            todoTitle: "Purchase Order Draft",
-            todoDescription: "Prepare PO for materials",
-            todoDeadline: "Mar 12, 2026",
-            todoPriority: "medium"
-          },
-          {
-            todoID: "68td",
-            todoTitle: "Shipping Schedule",
-            todoDescription: "Coordinate delivery timings",
-            todoDeadline: "Mar 13, 2026",
-            todoPriority: "low"
-          },
-          {
-            todoID: "69td",
-            todoTitle: "Item Inspection",
-            todoDescription: "Check delivered items for defects",
-            todoDeadline: "Mar 14, 2026",
-            todoPriority: "high"
-          },
-          {
-            todoID: "70td",
-            todoTitle: "Inventory Logging",
-            todoDescription: "Update procurement database",
-            todoDeadline: "Mar 15, 2026",
-            todoPriority: "low"
-          }
-        ]
-      },
-
-      // ---------------------- LIST 4 (6 TODOS) ----------------------
-      {
-        projectListID: "14pl",
-        projectListName: "Workspace Layout",
-        theme: { r: "200", g: "100", b: "50" },
-        todoList: [
-          {
-            todoID: "71td",
-            todoTitle: "Team Seating Plan",
-            todoDescription: "Assign new seating arrangement",
-            todoDeadline: "Mar 10, 2026",
-            todoPriority: "low"
-          },
-          {
-            todoID: "72td",
-            todoTitle: "Desk Layout",
-            todoDescription: "Design workstation placement",
-            todoDeadline: "Mar 11, 2026",
-            todoPriority: "medium"
-          },
-          {
-            todoID: "73td",
-            todoTitle: "Meeting Room Allocation",
-            todoDescription: "Assign conference room uses",
-            todoDeadline: "Mar 12, 2026",
-            todoPriority: "medium"
-          },
-          {
-            todoID: "74td",
-            todoTitle: "Storage Zones",
-            todoDescription: "Plan storage area distribution",
-            todoDeadline: "Mar 13, 2026",
-            todoPriority: "low"
-          },
-          {
-            todoID: "75td",
-            todoTitle: "Accessibility Check",
-            todoDescription: "Ensure layout meets guidelines",
-            todoDeadline: "Mar 14, 2026",
-            todoPriority: "high"
-          },
-          {
-            todoID: "76td",
-            todoTitle: "Floor Map Draft",
-            todoDescription: "Produce the updated layout map",
-            todoDeadline: "Mar 15, 2026",
-            todoPriority: "medium"
-          }
-        ]
-      },
-
-      // ---------------------- LIST 5 (4 TODOS) ----------------------
-      {
-        projectListID: "15pl",
         projectListName: "IT Infrastructure",
-        theme: { r: "0", g: "0", b: "150" },
+        theme: { r: 52, g: 152, b: 219 }, // Light Blue
         todoList: [
-          {
-            todoID: "77td",
-            todoTitle: "Network Plan",
-            todoDescription: "Determine wiring routes",
-            todoDeadline: "Mar 8, 2026",
-            todoPriority: "medium"
-          },
-          {
-            todoID: "78td",
-            todoTitle: "Server Setup",
-            todoDescription: "Prepare new server rack",
-            todoDeadline: "Mar 9, 2026",
-            todoPriority: "high"
-          },
-          {
-            todoID: "79td",
-            todoTitle: "WiFi Optimization",
-            todoDescription: "Create heatmap for signal coverage",
-            todoDeadline: "Mar 10, 2026",
-            todoPriority: "medium"
-          },
-          {
-            todoID: "80td",
-            todoTitle: "Workstation Installation",
-            todoDescription: "Install PCs and monitors",
-            todoDeadline: "Mar 11, 2026",
-            todoPriority: "low"
-          }
+          { todoID: "48td", todoTitle: "Cable Layout", todoDescription: "Define ethernet routing paths", todoDeadline: "Mar 17, 2026", todoPriority: "medium", todoStatus: "ongoing" },
+          { todoID: "49td", todoTitle: "WiFi Mesh Planning", todoDescription: "Place access points for coverage", todoDeadline: "Mar 18, 2026", todoPriority: "high", todoStatus: "ongoing" },
+          { todoID: "50td", todoTitle: "Server Room Setup", todoDescription: "Prep temperature control", todoDeadline: "Mar 19, 2026", todoPriority: "medium", todoStatus: "ongoing" },
+          { todoID: "51td", todoTitle: "Printer Stations", todoDescription: "Choose locations for printer hubs", todoDeadline: "Mar 20, 2026", todoPriority: "low", todoStatus: "ongoing" }
         ]
       }
     ]

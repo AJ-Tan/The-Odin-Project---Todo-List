@@ -134,3 +134,48 @@
 .todo-item__deadline {
   color: var(--color-text-light)
 }
+
+.todo-item__status {
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.todo-item[data-status="ongoing"] {
+  background-color: var(--ongoing-bg);
+
+  .todo-item__title {
+    color: var(--ongoing-header);
+  }
+
+  .todo-item__status {
+    color: var(--ongoing-text);
+  }
+}
+
+.todo-item[data-status="completed"] {
+  background-color: var(--completed-bg);
+
+  .todo-item__title {
+    color: var(--completed-header);
+  }
+
+  .todo-item__status {
+    color: var(--completed-text);
+  }
+}
+
+.todo-item[data-status="cancelled"] {
+  background-color: var(--cancelled-bg);
+
+  .todo-item__title {
+    color: var(--cancelled-header);
+  }
+
+  .todo-item__title, .todo-item__deadline, .todo-item__priority {
+    text-decoration: line-through;
+  }
+
+  .todo-item__status {
+    color: var(--cancelled-text);
+  }
+}

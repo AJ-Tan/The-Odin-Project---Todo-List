@@ -1,7 +1,8 @@
-const _ContentTodo = ({todoID, todoTitle, todoDeadline, todoPriority}) => {
+const _ContentTodo = ({todoID, todoTitle, todoDeadline, todoPriority, todoStatus}) => {
   const todoItemNode = document.createElement("li");
   todoItemNode.classList.add("todo-item");
   todoItemNode.dataset.id = todoID;
+  todoItemNode.dataset.status = todoStatus;
 
   const todoHeaderNode = document.createElement("header");
   todoHeaderNode.classList.add("todo-item__header");
@@ -37,8 +38,8 @@ const _ContentTodo = ({todoID, todoTitle, todoDeadline, todoPriority}) => {
   todoFooterNode.appendChild(todoDeadlineNode);
 
   const todoNotificationNode = document.createElement("span");
-  todoNotificationNode.classList.add("todo-item__notification");
-  todoNotificationNode.textContent = "Message!"
+  todoNotificationNode.classList.add("todo-item__status");
+  todoNotificationNode.textContent = todoStatus;
   todoFooterNode.appendChild(todoNotificationNode);
 
   return todoItemNode;
