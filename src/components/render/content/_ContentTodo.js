@@ -3,11 +3,11 @@ import { pubsub } from "../../../classes/PubSub";
 
 const transformStatus = (todoStatus, todoDeadline) => {
   if(todoStatus !== "ongoing") return todoStatus;
-  
+
   const dateSelect = document.getElementById("date-select");
-  let currentDate = new Date();
+  let currentDate = new Date().setHours(0,0,0,0);
   if(dateSelect.value) {
-    currentDate = new Date(dateSelect.value);
+    currentDate = new Date(dateSelect.value).setHours(0,0,0,0);
   }
   
   const todoDeadlineDate = new Date(todoDeadline);

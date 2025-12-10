@@ -42,6 +42,10 @@
   height: 1.85rem;
   background-color: transparent;
   border: none;
+
+  &:hover {
+    animation: wiggle 0.5s ease-in-out;
+  }
 }
 
 .btn-delete-list {
