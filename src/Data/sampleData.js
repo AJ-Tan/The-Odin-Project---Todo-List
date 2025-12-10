@@ -10,10 +10,10 @@ export const sampleData = [
         projectListName: "Social Media",
         theme: { r: 231, g: 76, b: 60 }, // Red
         todoList: [
-          { todoID: "1td", todoTitle: "Create Ad Copy", todoDescription: "Draft Facebook and Instagram promotional captions", todoDeadline: "Jan 9, 2026", todoPriority: "medium", todoStatus: "ongoing" },
+          { todoID: "1td", todoTitle: "Create Ad Copy", todoDescription: "Draft Facebook and Instagram promotional captions", todoDeadline: "Dec 9, 2025", todoPriority: "medium", todoStatus: "ongoing" },
           { todoID: "2td", todoTitle: "Design Banner Assets", todoDescription: "Produce hero images and story templates", todoDeadline: "Jan 11, 2026", todoPriority: "high", todoStatus: "completed" },
           { todoID: "10td", todoTitle: "Schedule Posts", todoDescription: "Prepare posting calendar for all platforms", todoDeadline: "Jan 12, 2026", todoPriority: "low", todoStatus: "cancelled" },
-          { todoID: "11td", todoTitle: "Audience Research", todoDescription: "Identify target demographics and behaviors", todoDeadline: "Jan 13, 2026", todoPriority: "medium", todoStatus: "ongoing" }
+          { todoID: "11td", todoTitle: "Audience Research", todoDescription: "Identify target demographics and behaviors", todoDeadline: "Dec 10, 2025", todoPriority: "medium", todoStatus: "ongoing" }
         ]
       },
       {

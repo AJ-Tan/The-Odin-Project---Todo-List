@@ -53,8 +53,14 @@
   --cancelled-header: #808080;
   --cancelled-text: #6E6E6E;
 
+  /* Deadline (due today) */
+  --deadline-bg: #FFF8E6;
+  --deadline-header: #da9800;
+  --deadline-text: #B87B00;
+
+
   /* Overdue (red-ish) */
-  --overdue-bg: #FDECEC;
+  --overdue-bg: #fcf1f1;
   --overdue-header: #E53935;
   --overdue-text: #B71C1C;
 }

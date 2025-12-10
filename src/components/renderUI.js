@@ -7,3 +7,4 @@ Sidebar();
 ContentSection();
 
 pubsub.publish("activeProject", todoData.currentProject);
+pubsub.publish("changeHeaderDate", new Date());

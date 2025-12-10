@@ -5,7 +5,6 @@ import "./subContentHeader";
 
 const eventsContentHeader = () => {
   const dateSelect = document.getElementById("date-select");
-  dateSelect.value = format(new Date(), "yyyy-MM-dd");
 
   const dateDisplay = document.getElementById("date-display");
   dateSelect.addEventListener("click", () => {
@@ -22,13 +21,12 @@ const eventsContentHeader = () => {
 
   dateDecrease.addEventListener("click", () => {
     const date = subDays(new Date(dateSelect.value), 1);
-    dateSelect.value = format(date, "yyyy-MM-dd");
+    
     pubsub.publish("changeHeaderDate", date);
   })
 
   dateIncrease.addEventListener("click", () => {
     const date = addDays(new Date(dateSelect.value), 1);
-    dateSelect.value = format(date, "yyyy-MM-dd");
     pubsub.publish("changeHeaderDate", date);
   })
 }

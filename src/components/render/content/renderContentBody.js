@@ -1,3 +1,4 @@
+import eventsContentBody from "../../events/content-body/eventsContentBody";
 import _ContentProjectList from "./_ContentProjectList";
 
 const renderContentBody = () => {

@@ -8,8 +8,8 @@ const eventsSidebar = () => {
   projectButtons.forEach(button => {
     button.addEventListener("click", (e) => {
       const selectedProjectID = e.currentTarget.parentNode.dataset.id;
-
       todoData.currentProject = selectedProjectID;
+      
       pubsub.publish("activeProject", todoData.currentProject);
     })
   })

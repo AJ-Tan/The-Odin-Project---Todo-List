@@ -8,16 +8,14 @@ pubsub.subscribe("changeHeaderDate", (date) => {
     ErrorLogger.throwError(`${date} is not a valid date`);
     return;
   };
+  const dateSelect = document.getElementById("date-select");
   const dateDisplay = document.getElementById("date-display");
-
+  date.setHours(0,0,0,0);
   dateDisplay.textContent = format(date, "MMM dd, yyyy");
+  dateSelect.value = format(date, "yyyy-MM-dd");
 })
 
 pubsub.subscribe("activeProject", ({projectName}) => {
   const headerTitleNode = document.querySelector(".header-title");
   headerTitleNode.textContent = projectName;
-})
-
-pubsub.subscribe("activeProject", () => {
-  renderContentBody();
 })
