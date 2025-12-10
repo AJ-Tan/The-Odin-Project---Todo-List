@@ -1,3 +1,4 @@
+import { pubsub } from "../../../classes/PubSub";
 import { todoData } from "../../../classes/TodoData";
 
 const EditProject = () => {
@@ -48,6 +49,8 @@ const EditProject = () => {
   projectNameInput.name = "projectName";
   projectNameInput.classList.add("form-input", "text");
   projectNameInput.value = todoData.currentProject.projectName;
+  projectNameInput.maxLength = 25;
+  projectNameInput.required = true;
   projectNameFormGroup.appendChild(projectNameInput);
 
   const projectNameError = document.createElement("span");
@@ -68,6 +71,7 @@ const EditProject = () => {
   projectPriorityInput.id = "project-priority";
   projectPriorityInput.name = "projectPriority";
   projectPriorityInput.classList.add("form-input", "select");
+  projectPriorityInput.required = true;
   projectPriorityFormGroup.appendChild(projectPriorityInput);
 
   const priorityOptions = {};
@@ -117,6 +121,20 @@ const EditProject = () => {
 
   modalFormNode.addEventListener("submit", e => {
     e.preventDefault();
+
+    const {projectName, projectDescription, projectPriority} = Object.fromEntries(new FormData(modalFormNode));
+        
+    const projectData = {
+      projectID: crypto.randomUUID(),
+      projectName,
+      projectDescription,
+      projectPriority
+    }
+
+    todoData.updateProject(todoData.currentProject, projectData);
+    pubsub.publish("renderProjects", null);
+    pubsub.publish("activeProject", todoData.currentProject);
+    modal.close();
   })
 
   modalNode.showModal();

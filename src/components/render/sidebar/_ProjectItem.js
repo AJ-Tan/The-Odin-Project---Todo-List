@@ -8,8 +8,12 @@ const _ProjectItem = ({projectID, projectName, projectPriority}) => {
   const projectButtonNode = document.createElement("button");
   projectButtonNode.setAttribute("type", "button");
   projectButtonNode.classList.add("project-item-button", "btn-project");
-  projectButtonNode.textContent = projectName;
+  // projectButtonNode.textContent = projectName;
   projectItemNode.appendChild(projectButtonNode);
+
+  const buttonTextNode = document.createElement("span");
+  buttonTextNode.textContent = projectName;
+  projectButtonNode.appendChild(buttonTextNode);
   
   const folderSVG = new DOMParser()
     .parseFromString(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>${projectPriority[0].toUpperCase() + projectPriority.slice(1)} priority</title><path d="M10,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V8C22,6.89 21.1,6 20,6H12L10,4Z" /></svg>`, "image/svg+xml")

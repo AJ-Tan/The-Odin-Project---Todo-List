@@ -1,4 +1,5 @@
 import { todoData } from "../../../classes/TodoData";
+import eventsSidebar from "../../events/sidebar/eventsSidebar";
 import _ProjectItem from "./_ProjectItem";
 
 const renderSidebarProjects = () => {
@@ -9,6 +10,7 @@ const renderSidebarProjects = () => {
   })
 
   projectListNode.replaceChildren(projectItems);
+  eventsSidebar();
 }
 
 export default renderSidebarProjects;

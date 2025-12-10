@@ -1,3 +1,6 @@
+import { pubsub } from "../../../classes/PubSub";
+import { todoData } from "../../../classes/TodoData";
+
 const AddProject = () => {
   const modalNode = document.getElementById("modal");
 
@@ -45,6 +48,8 @@ const AddProject = () => {
   projectNameInput.id = "project-name";
   projectNameInput.name = "projectName";
   projectNameInput.classList.add("form-input", "text");
+  projectNameInput.maxLength = 32;
+  projectNameInput.required = true;
   projectNameFormGroup.appendChild(projectNameInput);
 
   const projectNameError = document.createElement("span");
@@ -65,6 +70,7 @@ const AddProject = () => {
   projectPriorityInput.id = "project-priority";
   projectPriorityInput.name = "projectPriority";
   projectPriorityInput.classList.add("form-input", "select");
+  projectPriorityInput.required = true;
   projectPriorityFormGroup.appendChild(projectPriorityInput);
 
   const priorityOptions = {};
@@ -111,6 +117,19 @@ const AddProject = () => {
 
   modalFormNode.addEventListener("submit", e => {
     e.preventDefault();
+    const {projectName, projectDescription, projectPriority} = Object.fromEntries(new FormData(modalFormNode));
+
+    const projectData = {
+      projectID: crypto.randomUUID(),
+      projectName,
+      projectDescription,
+      projectPriority
+    }
+
+    todoData.addProject(projectData);
+    pubsub.publish("renderProjects", null);
+    pubsub.publish("activeProject", todoData.currentProject);
+    modal.close();
   })
 
   modalNode.showModal();

@@ -2,9 +2,6 @@ import "./css/sidebar.css";
 import userImg from "../assets/sidebar/user-img.avif";
 import { app } from "../classes/App";
 import renderSidebarProjects from "./render/sidebar/renderSidebar";
-import eventsSidebar from "./events/sidebar/eventsSidebar";
-
-
 
 export const Sidebar = () => {
   const sidebarNode = document.createElement("aside");
@@ -32,5 +29,4 @@ export const Sidebar = () => {
 
   app.appendContent(sidebarNode);
   renderSidebarProjects();
-  eventsSidebar();
 };

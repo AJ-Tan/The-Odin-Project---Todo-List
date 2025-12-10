@@ -1,3 +1,5 @@
+import { todoData } from "../../../classes/TodoData";
+import { pubsub } from "../../../classes/PubSub";
 import EditProject from "../../modals/sidebar/EditProject";
 import ViewProject from "../../modals/sidebar/ViewProject";
 
@@ -7,7 +9,8 @@ const _ProjectItemOptions = () => {
 
   const viewButtonNode = document.createElement("button");
   viewButtonNode.setAttribute("type", "button");
-  viewButtonNode.classList.add("btn-project-option", "btn-project-view");
+  viewButtonNode.classList.add("btn-project-option");
+  viewButtonNode.id = "btn-project-view";
   viewButtonNode.addEventListener("click", () => {
     ViewProject();
   })
@@ -23,7 +26,8 @@ const _ProjectItemOptions = () => {
 
   const editButtonNode = document.createElement("button");
   editButtonNode.setAttribute("type", "button");
-  editButtonNode.classList.add("btn-project-option", "btn-project-edit");
+  editButtonNode.classList.add("btn-project-option");
+  editButtonNode.id = "btn-project-edit";
   editButtonNode.addEventListener("click", () => {
     EditProject();
   })
@@ -39,7 +43,13 @@ const _ProjectItemOptions = () => {
 
   const deleteButtonNode = document.createElement("button");
   deleteButtonNode.setAttribute("type", "button");
-  deleteButtonNode.classList.add("btn-project-option", "btn-project-delete");
+  deleteButtonNode.classList.add("btn-project-option");
+  deleteButtonNode.id = "btn-project-delete";
+  deleteButtonNode.addEventListener("click", () => {
+    todoData.deleteProject(todoData.currentProject.projectID);
+    pubsub.publish("renderProjects", null);
+    pubsub.publish("activeProject", todoData.currentProject);
+  })
   optionsOverlayNode.appendChild(deleteButtonNode);
 
   const deleteTextNode = document.createElement("span");

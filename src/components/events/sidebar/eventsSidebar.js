@@ -2,6 +2,8 @@ import { todoData } from "../../../classes/TodoData";
 import { pubsub } from "../../../classes/PubSub";
 import "./subSidebar";
 import AddProject from "../../modals/sidebar/AddProject";
+import ViewProject from "../../modals/sidebar/ViewProject";
+import EditProject from "../../modals/sidebar/EditProject";
 
 
 const eventsSidebar = () => {
@@ -9,8 +11,7 @@ const eventsSidebar = () => {
   projectButtons.forEach(button => {
     button.addEventListener("click", (e) => {
       const selectedProjectID = e.currentTarget.parentNode.dataset.id;
-      todoData.currentProject = selectedProjectID;
-      
+      todoData.setCurrentProject(selectedProjectID);
       pubsub.publish("activeProject", todoData.currentProject);
     })
   })
