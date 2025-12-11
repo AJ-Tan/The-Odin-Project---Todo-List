@@ -58,6 +58,19 @@ class TodoData {
     if(getIndex < 0) return;
     projectObject.projectList.splice(getIndex, 1);
   }
+
+  addTodo(projectListObject, todoData) {
+    if(!projectListObject.todoList) {
+      projectListObject.todoList = [];
+    }
+    projectListObject.todoList.push(todoData);
+  }
+
+  deleteTodo(todoListObject, todoID) {
+    const getIndex = todoListObject.findIndex(todo => todo.todoID === todoID);
+    if(getIndex < 0) return;
+    todoListObject.splice(getIndex, 1);
+  }
 }
 
 export const todoData = new TodoData(todoDataAPI);

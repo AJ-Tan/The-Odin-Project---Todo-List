@@ -12,11 +12,13 @@ const AddProjectList = () => {
   modalHeaderContainerNode.classList.add("modal-header__container");
   modalFormNode.appendChild(modalHeaderContainerNode);
 
+  // Modal Title =====================================================
   const modalTitleNode = document.createElement("h2");
   modalTitleNode.id = "modal-header__title";
   modalTitleNode.textContent = "Add Project List";
   modalHeaderContainerNode.appendChild(modalTitleNode);
 
+  // Modal Close =====================================================
   const modalCloseNode = document.createElement("button");
   modalCloseNode.setAttribute("type", "button");
   modalCloseNode.classList.add("modal-close");

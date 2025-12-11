@@ -14,11 +14,13 @@ const EditProjectList = (projectListObject) => {
   modalHeaderContainerNode.classList.add("modal-header__container");
   modalFormNode.appendChild(modalHeaderContainerNode);
 
+  // Modal Title =====================================================
   const modalTitleNode = document.createElement("h2");
   modalTitleNode.id = "modal-header__title";
   modalTitleNode.textContent = "Edit Project List";
   modalHeaderContainerNode.appendChild(modalTitleNode);
 
+  // Modal Close =====================================================
   const modalCloseNode = document.createElement("button");
   modalCloseNode.setAttribute("type", "button");
   modalCloseNode.classList.add("modal-close");
@@ -76,7 +78,6 @@ const EditProjectList = (projectListObject) => {
   listThemeFormGroup.appendChild(listThemeInput);
 
   // Project Submit ===========================================
-
   const projectSubmit = document.createElement("button");
   projectSubmit.classList.add("form-button", "submit");
   projectSubmit.setAttribute("type", "submit");

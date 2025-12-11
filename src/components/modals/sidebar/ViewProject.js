@@ -5,17 +5,19 @@ const ViewProject = () => {
 
   const modalFormNode = document.createElement("form");
   modalFormNode.classList.add("modal-form");
-  modalNode.appendChild(modalFormNode);
+  modalNode.replaceChildren(modalFormNode);
 
   const modalHeaderContainerNode = document.createElement("header");
   modalHeaderContainerNode.classList.add("modal-header__container");
   modalFormNode.appendChild(modalHeaderContainerNode);
 
+  // Modal Title =====================================================
   const modalTitleNode = document.createElement("h2");
   modalTitleNode.id = "modal-header__title";
   modalTitleNode.textContent = "View Project";
   modalHeaderContainerNode.appendChild(modalTitleNode);
 
+  // Modal Close =====================================================
   const modalCloseNode = document.createElement("button");
   modalCloseNode.setAttribute("type", "button");
   modalCloseNode.classList.add("modal-close");
@@ -81,7 +83,7 @@ const ViewProject = () => {
   modalInputContainerNode.appendChild(projectDescriptionFormGroup);
 
   const projectDescriptionLabel = document.createElement("label");
-  projectDescriptionLabel.setAttribute("for", "project-name");
+  projectDescriptionLabel.setAttribute("for", "project-description");
   projectDescriptionLabel.textContent = "Project Description";
   projectDescriptionFormGroup.appendChild(projectDescriptionLabel);
 
