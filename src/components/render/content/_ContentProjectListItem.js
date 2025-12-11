@@ -1,6 +1,11 @@
+import { todoData } from "../../../classes/TodoData";
+import EditProjectList from "../../modals/contentHeader/EditProjectList";
 import _ContentTodo from "./_ContentTodo";
+import renderContentBody from "./renderContentBody";
 
-const _ContentProjectListItem = ({projectListID, projectListName, theme: {r,g,b}, todoList}) => {
+const _ContentProjectListItem = (projectList) => {
+  const {projectListID, projectListName, theme: {r,g,b}, todoList} = projectList;
+
   const projectListItemNode = document.createElement("li");
   projectListItemNode.classList.add("content-project-list-item");
   projectListItemNode.dataset.id = projectListID;
@@ -14,10 +19,6 @@ const _ContentProjectListItem = ({projectListID, projectListName, theme: {r,g,b}
   projectItemTitleContainer.classList.add("title-container");
   projectItemHeaderNode.appendChild(projectItemTitleContainer);
 
-  // const titleWrapper = document.createElement("div");
-  // titleWrapper.classList.add("title-wrapper");
-  // projectItemTitleContainer.appendChild(titleWrapper);
-
   const projectItemTitleNode = document.createElement("h2");
   projectItemTitleNode.classList.add("content-project-list-item__title");
   projectItemTitleNode.textContent = projectListName;
@@ -27,6 +28,9 @@ const _ContentProjectListItem = ({projectListID, projectListName, theme: {r,g,b}
   const projectItemEditNode = document.createElement("button");
   projectItemEditNode.setAttribute("type", "button");
   projectItemEditNode.classList.add("btn-project-list-edit");
+  projectItemEditNode.addEventListener("click", () => {
+    EditProjectList(projectList);
+  })
   projectItemTitleContainer.appendChild(projectItemEditNode);
 
   const editSVG = new DOMParser()
@@ -37,6 +41,10 @@ const _ContentProjectListItem = ({projectListID, projectListName, theme: {r,g,b}
   const btnDeleteListNode = document.createElement("button");
   btnDeleteListNode.setAttribute("type", "button");
   btnDeleteListNode.classList.add("btn-delete-list");
+  btnDeleteListNode.addEventListener("click", () => {
+    todoData.deleteList(todoData.currentProject, projectListID);
+    renderContentBody();
+  })
   projectItemHeaderNode.appendChild(btnDeleteListNode);
 
   const closeSVG = new DOMParser()

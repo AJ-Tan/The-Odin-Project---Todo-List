@@ -16,7 +16,10 @@ pubsub.subscribe("changeHeaderDate", (date) => {
 })
 
 pubsub.subscribe("activeProject", (projectData) => {
-  if(!projectData) return;
   const headerTitleNode = document.querySelector(".header-title");
-  headerTitleNode.textContent = projectData.projectName;
+  if(projectData) {
+    headerTitleNode.textContent = projectData.projectName;
+  } else {
+    headerTitleNode.textContent = "...";
+  };
 })

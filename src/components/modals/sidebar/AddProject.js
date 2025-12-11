@@ -48,7 +48,7 @@ const AddProject = () => {
   projectNameInput.id = "project-name";
   projectNameInput.name = "projectName";
   projectNameInput.classList.add("form-input", "text");
-  projectNameInput.maxLength = 32;
+  projectNameInput.maxLength = 25;
   projectNameInput.required = true;
   projectNameFormGroup.appendChild(projectNameInput);
 
@@ -88,6 +88,7 @@ const AddProject = () => {
   priorityOptions.low.value = "low";
   priorityOptions.low.textContent = "Low";
   projectPriorityInput.appendChild(priorityOptions.low);
+  priorityOptions.medium.selected = true;
 
   // Project Description =====================================
 

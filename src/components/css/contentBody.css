@@ -4,8 +4,12 @@
 
 .content-project-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+  grid-template-columns: repeat(auto-fit, 19rem);
   gap: 2rem;
+
+  @media screen and (max-width: 88.9375em) {
+    grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+  }
 }
 
 .content-project-list__header {

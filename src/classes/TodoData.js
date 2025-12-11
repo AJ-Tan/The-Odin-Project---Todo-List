@@ -37,8 +37,26 @@ class TodoData {
     const getIndex = this.#data.findIndex(data => data.projectID === projectID);
     if(getIndex < 0) return;
 
-    this.#currentProject = this.#data[0];
     this.#data.splice(getIndex, 1);
+    this.#currentProject = this.#data[0];
+  }
+
+  addList(projectObject, listData) {
+    if(!projectObject.projectList) {
+      projectObject.projectList = [];
+    }
+    projectObject.projectList.push(listData);
+  }
+
+  updateList(projectListObject, {projectListName, theme}) {
+    projectListObject.projectListName = projectListName;
+    projectListObject.theme = theme;
+  }
+
+  deleteList(projectObject, projectListID) {
+    const getIndex = projectObject.projectList.findIndex(item => item.projectListID === projectListID);
+    if(getIndex < 0) return;
+    projectObject.projectList.splice(getIndex, 1);
   }
 }
 

@@ -2,6 +2,7 @@ import { todoData } from "../../../classes/TodoData";
 import { addDays, subDays, format } from "date-fns";
 import { pubsub } from "../../../classes/PubSub";
 import "./subContentHeader";
+import AddProjectList from "../../modals/contentHeader/AddProjectList";
 
 const eventsContentHeader = () => {
   const dateSelect = document.getElementById("date-select");
@@ -28,6 +29,12 @@ const eventsContentHeader = () => {
   dateIncrease.addEventListener("click", () => {
     const date = addDays(new Date(dateSelect.value), 1);
     pubsub.publish("changeHeaderDate", date);
+  })
+
+  const btnAddListNode = document.getElementById("add-list");
+  btnAddListNode.addEventListener("click", () => {
+    if(!todoData.currentProject) return;
+    AddProjectList();
   })
 }
 

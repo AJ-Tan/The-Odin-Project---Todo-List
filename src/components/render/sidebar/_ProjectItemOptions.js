@@ -2,6 +2,7 @@ import { todoData } from "../../../classes/TodoData";
 import { pubsub } from "../../../classes/PubSub";
 import EditProject from "../../modals/sidebar/EditProject";
 import ViewProject from "../../modals/sidebar/ViewProject";
+import renderContentBody from "../content/renderContentBody";
 
 const _ProjectItemOptions = () => {
   const optionsOverlayNode = document.createElement("div");
