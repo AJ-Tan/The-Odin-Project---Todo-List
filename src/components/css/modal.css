@@ -94,6 +94,15 @@
   }
 }
 
+.form-group-row {
+  display: flex;
+  gap: 2rem;
+
+  & > * {
+    flex: 1;
+  }
+}
+
 .submit {
   margin-top: 1rem;
 

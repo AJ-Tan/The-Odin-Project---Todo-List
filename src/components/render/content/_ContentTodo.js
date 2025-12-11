@@ -2,6 +2,7 @@ import { isAfter, isEqual, addDays, differenceInDays } from "date-fns";
 import { pubsub } from "../../../classes/PubSub";
 import { todoData } from "../../../classes/TodoData";
 import renderContentBody from "./renderContentBody";
+import EditTodo from "../../modals/contentBody/EditTodo";
 
 const transformStatus = (todoStatus, todoDeadline) => {
   if(todoStatus !== "ongoing") return [todoStatus, todoStatus];
@@ -27,8 +28,14 @@ const transformStatus = (todoStatus, todoDeadline) => {
   }
 }
 
-const _ContentTodo = (todoList, {todoID, todoTitle, todoDeadline, todoPriority, todoStatus}) => {
+const _ContentTodo = (todoList, todoObject) => {
+  const {todoID, todoTitle, todoDeadline, todoPriority, todoStatus} = todoObject;
   const todoItemNode = document.createElement("li");
+  todoItemNode.addEventListener("click", (e) => {
+    if(e.target.tagName === "path") return;
+    if(e.target.tagName === "svg") return;
+    EditTodo(todoObject);
+  })
   const [currentTodoStatus, statusTextDisplay] = transformStatus(todoStatus, todoDeadline);
 
   // Todo Wrapper ======================================================
